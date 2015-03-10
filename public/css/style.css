@@ -1,0 +1,23 @@
+body {
+	min-width: 1200px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #15202D !important;
+	color: #aaa !important;
+}
+
+#about {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+
+	/*padding-left: 8%;
+	padding-right: 8%;
+	background-color: #15202D;*/
+}
+
+.title {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 1px;
+	color: #fff;
+	font-size: 20px;
+}
