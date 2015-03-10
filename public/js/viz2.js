@@ -4,7 +4,7 @@ var width = 1200,
 // var width = screen.width*0.9,
 
 	width = width - margin.left - margin.right,
-	height = screen.width * 0.4,
+	height = width * 0.56,
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')

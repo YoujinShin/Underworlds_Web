@@ -1,6 +1,7 @@
 var radiusValues = [1, 10, 100, 1000, 10000, 100000];
 // var pos_left_x = - width * 0.35;
-var pos_left_x = width * 0.35;
+// var pos_left_x = width * 0.35;
+var pos_left_x = width/2 - 90;
 
 
 function radiusGuide() {
@@ -139,9 +140,11 @@ var yScale = d3.scale.linear()
 
 // phylum,class,order,family,genus,value
 
-var xpos = -1 * pos_left_x - 80;
-// var xpos = width * 0.3;
-var xpos2 = -1 * pos_left_x - 10;
+// var xpos = -1 * pos_left_x - 80;
+// var xpos2 = -1 * pos_left_x - 10;
+
+var xpos =  -width/2 + 25;
+var xpos2 = xpos + 80;
 
 function texonomyList() {
 
