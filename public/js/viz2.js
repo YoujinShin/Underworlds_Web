@@ -21,11 +21,11 @@ svg.append('rect')
 		.attr('height', height + margin.top + margin.bottom)
 		.style('fill', '#15202D');
 
-var tx = width/2 + margin.left -50;
-var ty = height/2 + margin.top -20;
+// var tx = width/2 + margin.left -50;
+// var ty = height/2 + margin.top -20;
 
-// var tx = width/2 + margin.left - 54;
-// var ty = height/2 + margin.top;
+var tx = width/2 + margin.left;
+var ty = height/2 + margin.top;
 
 var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
