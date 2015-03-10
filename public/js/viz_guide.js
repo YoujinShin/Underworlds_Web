@@ -143,8 +143,8 @@ var yScale = d3.scale.linear()
 // var xpos = -1 * pos_left_x - 80;
 // var xpos2 = -1 * pos_left_x - 10;
 
-var xpos =  -width/2 + 25;
-var xpos2 = xpos + 80;
+var xpos =  -width/2 + 30;
+var xpos2 = xpos + 72;
 
 function texonomyList() {
 
@@ -251,10 +251,12 @@ function texonomyList() {
 		.style('fill-opacity', 0)
 		.style("text-anchor", "start");
 
+	var box_w = 86;
+
 	selectedBox = g.append('rect')
-		.attr('x', xpos - 50)
+		.attr('x', xpos - box_w/2)
 		.attr('y', yScale(0) - 20 )
-		.attr('width', 100)
+		.attr('width', box_w)
 		.attr('height', 30)
 		.style('fill', 'rgba(0,0,0,0)')
 		.attr('stroke-width', 1)
