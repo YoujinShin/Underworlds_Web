@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 // var width = 1200,
 var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = screen.width * 0.5,
+	height = screen.width * 0.4,
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -31,7 +31,7 @@ var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
 var innerRadius = height*0.3;
-var outerRadius = height*0.43;
+var outerRadius = height*0.47;
 
 var linearScale = d3.scale.linear()
 					.domain([0, 4.524]) // [0, max log value] -> radius

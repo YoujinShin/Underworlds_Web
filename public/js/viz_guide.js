@@ -130,7 +130,7 @@ var domain_name, phylum_name, class_name, order_name,
 
 var yScale = d3.scale.linear()
 				.domain([0, 5])  
-				.range([-100, outerRadius-100]);
+				.range([-90, outerRadius-90]);
 				// .range([-height*0.18, height*0.25]);
 
 // phylum,class,order,family,genus,value
