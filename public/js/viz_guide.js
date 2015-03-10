@@ -95,9 +95,9 @@ function textGuide() {
 		.style("text-anchor", "middle");
 
 	g.append('line') //upper line
-			.attr('x1', pos_left_x - 80)
+			.attr('x1', pos_left_x - 76)
 			.attr('y1', -70 )
-			.attr('x2', pos_left_x + 80)
+			.attr('x2', pos_left_x + 76)
 			.attr('y2', -70 )
 			.attr('stroke', '#fff')
 			.style('opacity', 0.65)
