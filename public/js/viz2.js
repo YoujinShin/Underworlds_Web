@@ -1,7 +1,8 @@
 var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 
-// var width = 1200,
-var width = screen.width*0.9,
+var width = 1200,
+// var width = screen.width*0.9,
+
 	width = width - margin.left - margin.right,
 	height = screen.width * 0.4,
 	height = height - margin.top - margin.bottom;
