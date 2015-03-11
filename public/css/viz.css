@@ -52,6 +52,7 @@
 	letter-spacing: 2px;
 	font-weight: lighter;
 }
+
 .scaleText {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
@@ -117,7 +118,6 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	color: rgba(255,255,255,0.8);
-	/*stroke: none;*/
 	text-align: left;
 	letter-spacing: 2px;
 	font-weight: lighter;
@@ -130,7 +130,6 @@
 	font-size: 12px;
 	fill: rgba(255,255,255,0.4);
 	stroke: none;
-	/*text-align: center;*/
 	letter-spacing: 2px;
 	font-weight: lighter;
 }
@@ -138,11 +137,8 @@
 .selected {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-	/*fill: rgba(255,255,255,0.8);*/
 	fill: rgba(255,255,255,0.9);
 	stroke: none;
-	/*text-align: center;*/
 	letter-spacing: 2px;
 	font-weight: lighter;
 }
-
