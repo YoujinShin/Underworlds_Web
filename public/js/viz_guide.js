@@ -102,7 +102,7 @@ function textGuide() {
 			.attr('x2', pos_left_x + 76)
 			.attr('y2', -70 )
 			.attr('stroke', '#fff')
-			.style('opacity', 0.65)
+			.style('opacity', 0.3)
 			.attr('stroke-width', 1);
 
 	g.append('line') //lower line
