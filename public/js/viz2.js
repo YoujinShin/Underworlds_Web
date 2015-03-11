@@ -99,7 +99,7 @@ function draw(error, genus, root) {
 						selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
 
 						tooltip.text(d.genus +", " + d.value);
-						tooltip.style("visibility", "visible");
+						// tooltip.style("visibility", "visible");
 					})
 					.on("mousemove", function(){
 						tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
@@ -138,7 +138,7 @@ function draw(error, genus, root) {
 						selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
 
 						tooltip.text(d.genus +", " + d.value);
-						tooltip.style("visibility", "visible");
+						// tooltip.style("visibility", "visible");
 					})
 					.on("mousemove", function(){
 
@@ -174,7 +174,7 @@ function draw(error, genus, root) {
 			tooltip.text(d.name);
 			selectParents(d, path);
 			selectChildren(d, dots);
-			tooltip.style("visibility", "visible");
+			// tooltip.style("visibility", "visible");
 		})
 		.on("mousemove", function(){
 

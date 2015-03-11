@@ -1,8 +1,7 @@
 var radiusValues = [1, 10, 100, 1000, 10000, 100000];
-// var pos_left_x = - width * 0.35;
+var pos_left_x = - width * 0.35;
 // var pos_left_x = width * 0.35;
-var pos_left_x = width/2 - 90;
-
+// var pos_left_x = width/2 - 90;
 
 function radiusGuide() {
 
@@ -29,8 +28,8 @@ function radiusGuide() {
 			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
 			.text(r)
 			.attr('stroke-width', 1)
-			.style("text-anchor", "start");
-			// .style("text-anchor", "end");
+			// .style("text-anchor", "start");
+			.style("text-anchor", "end");
 
 		g.append('line')
 			.attr('x1', 0 )
@@ -109,8 +108,8 @@ function textGuide() {
 	g.append('line') //lower line
 			.attr('x1', pos_left_x )
 			.attr('y1', 0 )
-			// .attr('x2', -outerRadius*1.03) // -268
-			.attr('x2', outerRadius*1.03)
+			.attr('x2', -outerRadius*1.03) // -268
+			// .attr('x2', outerRadius*1.03)
 			.attr('y2', 0 )
 			.attr('stroke', '#fff')
 			.style('opacity', 0.3)
@@ -140,11 +139,11 @@ var yScale = d3.scale.linear()
 
 // phylum,class,order,family,genus,value
 
-// var xpos = -1 * pos_left_x - 80;
-// var xpos2 = -1 * pos_left_x - 10;
+var xpos = -1 * pos_left_x - 40;
+var xpos2 = -1 * pos_left_x + 40;
 
-var xpos =  -width/2 + 30;
-var xpos2 = xpos + 72;
+// var xpos =  -width/2 + 30;
+// var xpos2 = xpos + 72;
 
 function texonomyList() {
 

@@ -50,30 +50,37 @@ p {
 	text-align: right;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-}
-
-.bg-white {
-	background-color: rgba(255,255,255,0.05);
+	line-height: 150%;
 }
 
 #name {
-	background-color: rgba(255,255,255,0.05);
+	background-color: rgba(255,255,255,0.0);
 	position: relative;
 	width: 100%;
 	margin: 0px;
 
-	top: 0px;
-	font-family: 'Open Sans', sans-serif;
-	letter-spacing: 2px;
+	top: 20px;
 	padding: 20px;
-	padding-left: 10%;
-	padding-bottom: 8px;
-	font-size: 20px;
-	padding-top: 32px;
-	color: rgba(255,255,255,0.9);
+	padding-left: 0px;
+	padding-bottom: 2px;
+	padding-top: 34px;
+
 }
 
+#header {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: rgba(255,255,255,0.95);
+}
 
+#subheader {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 1px;
+	font-size: 12px;
+	padding-left: 12px;
+	color: rgba(255,255,255,0.95);
+}
 
 .maintitle {
 	position: absolute;
