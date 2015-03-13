@@ -62,9 +62,9 @@ function textGuide() {
 		// .attr('class', 'middleTextBIG')
 		.attr('class', 'middleText')
 		.attr('x', 0)
-		// .attr('y', outerRadius + 2 )
-		.attr('y', outerRadius + 28 )
-		.text('Taxonomic Hits Distribution') // Taxonomic Hits Distribution
+		.attr('y', outerRadius + 2 )
+		// .attr('y', outerRadius + 28 )
+		.text('Taxonomic Hits') // Taxonomic Hits Distribution
 		.attr('stroke-width', 1)
 		.style("text-anchor", "middle");
 
