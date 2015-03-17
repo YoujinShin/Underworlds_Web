@@ -15,7 +15,14 @@ body {
 
 .strong {
 	/*font-weight: bold;*/
-	color: rgba(255,255,255,0.96);
+	/*color: rgba(255,255,255,0.96);*/
+	/*background-color: rgba(255,255,255,0.2);*/
+	background-color: rgba(255,255,255,0.4);
+	padding-left: 2px;
+	padding-right: 2px;
+	color:  black;
+	/*color: rgba(255,255,255,0.98);*/
+	 /*text-decoration: underline;*/
 }
 
 p {
