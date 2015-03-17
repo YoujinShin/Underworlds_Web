@@ -3,7 +3,7 @@ body {
 	/*padding-top: 40px;*/
 	padding-bottom: 40px;
 	background-color: #15202D !important;
-	color: #777 !important;
+	color: #aaa !important;
 }
 
 #labname {
@@ -27,7 +27,7 @@ p {
 #about {
 	position: relative;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	top: 60px;
 
 	/*padding-left: 8%;
@@ -38,7 +38,7 @@ p {
 #pilot {
 	position: relative;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	top: 80px;
 }
 
@@ -110,7 +110,7 @@ p {
 	font-size: 14px;
 	/*padding-left: 12px;*/
 	color: #aaa;
-	opacity: 0.55;
+	opacity: 0.8;
 	/*color: rgba(255,255,255,0.8);*/
 	padding-top: 14px;
 }
