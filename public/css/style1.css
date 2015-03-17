@@ -39,7 +39,7 @@ p {
 	position: relative;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
-	top: 75px;
+	top: 78px;
 }
 
 #news {
@@ -53,8 +53,8 @@ p {
 	position: relative;
 	width: 72%;
 	left: 14%;
-	padding-top: 10px;
-	padding-bottom: 60px;
+	padding-top: 26px;
+	padding-bottom: 70px;
 	/*margin-left
     margin-right: auto;*/: auto;
 }
