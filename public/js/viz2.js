@@ -79,7 +79,7 @@ function draw(error, genus, root) {
 					.attr('y1', function(d, i) { return getY1(d.value, i); })
 					.attr('x2', function(d, i) { return getX(d.value, i); })
 					.attr('y2', function(d, i) { return getY(d.value, i); })
-					.style('opacity', 0.3) // 0.18
+					.style('opacity', 0.1) // 0.18
 					.attr('stroke-width', 1)
 					.attr('stroke', '#92A7B4')
 					.on("mouseover", function(d) {
