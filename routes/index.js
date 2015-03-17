@@ -14,3 +14,9 @@ exports.index = function(req, res) {
 	res.render('index.html');
 	// res.render('main.html');
 }
+
+exports.viz1 = function(req, res) {
+	console.log('viz1 page requested');
+	res.render('viz1.html');
+	// res.render('main.html');
+}
