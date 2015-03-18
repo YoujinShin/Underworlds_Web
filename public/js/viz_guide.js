@@ -1,5 +1,6 @@
 var radiusValues = [1, 10, 100, 1000, 10000, 100000];
-var pos_left_x = - width * 0.35;
+// var pos_left_x = - width * 0.35;
+var pos_left_x = - width * 0.4;
 // var pos_left_x = width * 0.35;
 // var pos_left_x = width/2 - 90;
 
@@ -8,6 +9,7 @@ function radiusGuide() {
 	for(var i = 0; i < radiusValues.length; i++) {
 
 		var r = radiusValues[i];
+		var x = pos_left_x;
 
 		g.append('circle')
 			.attr('r', linearScale( Math.log10(r) ) )
@@ -24,17 +26,19 @@ function radiusGuide() {
 
 		g.append('text')
 			.attr('class', 'scaleText')
-			.attr('x', pos_left_x )
-			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
+			.attr('x', x )
+			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) -2)
+			// .attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) + 10)
 			.text(r)
 			.attr('stroke-width', 1)
+			// .style("text-anchor", "middle");
 			// .style("text-anchor", "start");
 			.style("text-anchor", "end");
 
 		g.append('line')
 			.attr('x1', 0 )
 			.attr('y1', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
-			.attr('x2', pos_left_x - 1)
+			.attr('x2', x - 1)
 			.attr('y2', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
 			.text(r)
 			.attr('stroke', '#fff')
@@ -56,17 +60,15 @@ function textGuide() {
 		.attr('stroke-width', 1)
 		.style("text-anchor", "middle");
 
-		
-
-	g.append('text')
-		// .attr('class', 'middleTextBIG')
-		.attr('class', 'middleText')
-		.attr('x', 0)
-		.attr('y', outerRadius + 2 )
-		// .attr('y', outerRadius + 28 )
-		.text('Taxonomic Hits') // Taxonomic Hits Distribution
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+	// g.append('text')
+	// 	// .attr('class', 'middleTextBIG')
+	// 	.attr('class', 'middleText')
+	// 	.attr('x', 0)
+	// 	.attr('y', outerRadius + 2 )
+	// 	// .attr('y', outerRadius + 28 )
+	// 	.text('Taxonomic Hits') // Taxonomic Hits Distribution
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
 
 	// g.append('text')
 	// 	.attr('class', 'middleTextBIG')

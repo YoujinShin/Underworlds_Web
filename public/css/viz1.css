@@ -2,7 +2,7 @@
 #viz {
 	position: relative;
 	text-align: center;
-	top: 30px;
+	top: 10px;
 	/*padding-top: 90px;
 	padding-bottom: 0px;*/
 }
@@ -14,15 +14,6 @@
 .bg { 
 	stroke: white;
 	stroke-width: 1;
-}
-
-.scaleText {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 9px;
-	fill: rgba(255,255,255,0.3);
-	stroke: none;
-	text-align: left;
-	letter-spacing: 1px;
 }
 
 .middleText0 {
@@ -57,8 +48,8 @@
 
 .scaleText {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 10px;
-	fill: rgba(255,255,255,0.3);
+	font-size: 9px;
+	fill: rgba(255,255,255,0.25);
 	stroke: none;
 	text-align: left;
 	letter-spacing: 1px;
