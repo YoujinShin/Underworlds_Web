@@ -110,7 +110,8 @@ function textGuide() {
 		.attr('width', 305)
 		.attr('height', 257)
 		.attr('stroke', '#fff')
-		.attr('stroke-width', 0.1)
+		.style("stroke-dasharray", ("1,4"))
+		.attr('stroke-width', 0.3)
 		.style('fill', 'none');
 		// .style('fill', 'rgba(255,255,255,0.03)');
 
