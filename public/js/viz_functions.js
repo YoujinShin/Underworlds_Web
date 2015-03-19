@@ -48,7 +48,7 @@ function selectParents2(d, path) {
 
 var opacScale = d3.scale.linear()
 					.domain([5, 1])  
-					.range([0.5, 0.99]);
+					.range([0.4, 0.999]);
 
 function selectArc(path, name0, name1, name2, name3, name4, depth) {
 
@@ -79,7 +79,7 @@ function selectArc(path, name0, name1, name2, name3, name4, depth) {
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else {
-			d3.select(this).style("fill-opacity", 0.2);
+			d3.select(this).style("fill-opacity", 0.1);
 		}
 	});
 }
@@ -154,7 +154,7 @@ function selectDots2(genus, family) {
 
 function unselectArc(path) {
 	svg.selectAll("path").each(function(e) {
-		d3.select(this).style("fill-opacity", 0.2);
+		d3.select(this).style("fill-opacity", 0.1);
 	});
 }
 
@@ -178,7 +178,7 @@ function selectLine(genus, family) {
 function unselectLine() {
 	lines.each(function(e) {
 		d3.select(this).attr("stroke-width", 1);
-		d3.select(this).style('opacity', 0.1);
+		d3.select(this).style('opacity', 0.2);
 	});
 }
 

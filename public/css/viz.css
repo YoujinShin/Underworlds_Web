@@ -1,6 +1,7 @@
 /*viz*/
 #viz {
 	text-align: center;
+	padding-top: 16px;
 	/*padding-top: 90px;
 	padding-bottom: 0px;*/
 }
@@ -64,7 +65,7 @@
 
 .middleText {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	fill: rgba(255,255,255,0.55);
 	stroke: none;
 	text-align: left;
@@ -74,8 +75,8 @@
 
 .middleTextBIG {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 13px;
-	fill: rgba(255,255,255,0.9);
+	font-size: 26px;
+	fill: rgba(255,255,255,0.4);
 	stroke: none;
 	text-align: left;
 	letter-spacing: 2px;

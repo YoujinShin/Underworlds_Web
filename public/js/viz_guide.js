@@ -1,7 +1,7 @@
 var radiusValues = [1, 10, 100, 1000, 10000, 100000];
 // var pos_left_x = - width * 0.35;
-var pos_left_x = - width * 0.4;
-// var pos_left_x = width * 0.35;
+// var pos_left_x = width * 0.6-20;
+var pos_left_x = -width * 0.35;
 // var pos_left_x = width/2 - 90;
 
 function radiusGuide() {
@@ -9,7 +9,8 @@ function radiusGuide() {
 	for(var i = 0; i < radiusValues.length; i++) {
 
 		var r = radiusValues[i];
-		var x = pos_left_x;
+		// var x = -pos_left_x - 70;
+		var x = -outerRadius;
 
 		g.append('circle')
 			.attr('r', linearScale( Math.log10(r) ) )
@@ -26,53 +27,118 @@ function radiusGuide() {
 
 		g.append('text')
 			.attr('class', 'scaleText')
-			.attr('x', x )
-			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) -2)
+			// .attr('x', x + 2)
+			.attr('x', 0)
+			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) + 10)
 			// .attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) + 10)
 			.text(r)
+			.style('opacity', 0)
 			.attr('stroke-width', 1)
-			// .style("text-anchor", "middle");
+			.style("text-anchor", "middle");
 			// .style("text-anchor", "start");
-			.style("text-anchor", "end");
+			// .style("text-anchor", "end");
 
-		g.append('line')
-			.attr('x1', 0 )
-			.attr('y1', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
-			.attr('x2', x - 1)
-			.attr('y2', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
-			.text(r)
-			.attr('stroke', '#fff')
-			.style("stroke-dasharray", ("1,4"))
-			.style('opacity', 0.17)
-			.attr('stroke-width', 1);
+		// g.append('line')
+		// 	.attr('x1', 0 )
+		// 	.attr('y1', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
+		// 	.attr('x2', x - 1)
+		// 	.attr('y2', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
+		// 	.text(r)
+		// 	.attr('stroke', '#fff')
+		// 	.style("stroke-dasharray", ("1,4"))
+		// 	.style('opacity', 0.17)
+		// 	.attr('stroke-width', 1);
 	}
 }
 
 
 function textGuide() {
 
-	g.append('text')
-		// .attr('class', 'middleTextBIG')
-		.attr('class', 'middleText')
-		.attr('x', 0)
-		.attr('y', 5 )
-		.text('Taxonomy') //Taxonomy
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
-
 	// g.append('text')
-	// 	// .attr('class', 'middleTextBIG')
 	// 	.attr('class', 'middleText')
 	// 	.attr('x', 0)
-	// 	.attr('y', outerRadius + 2 )
-	// 	// .attr('y', outerRadius + 28 )
-	// 	.text('Taxonomic Hits') // Taxonomic Hits Distribution
+	// 	.attr('y', 5)
+	// 	.text('Taxonomy') //Taxonomy
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
+
+	// g.append('text')
+	// 	.attr('class', 'middleText')
+	// 	.attr('x', 0)
+	// 	.attr('y', 18)
+	// 	.text('hits') //Taxonomy
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
+
+	// g.append('text')
+	// 	.attr('class', 'middleText')
+	// 	.attr('x', outerRadius + 15)
+	// 	.attr('y', 150)
+	// 	.text('Hits') //Taxonomy
 	// 	.attr('stroke-width', 1)
 	// 	.style("text-anchor", "middle");
 
 	// g.append('text')
 	// 	.attr('class', 'middleTextBIG')
-	// 	.attr('x', -400)
+	// 	.attr('x', 0)
+	// 	.attr('y', 15 )
+	// 	.text('Bacterial Profile') //Taxonomy
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
+
+	g.append('text')
+		.attr('class', 'middleTextBIG')
+		.attr('x', -pos_left_x +170)
+		.attr('y', -height*0.26 )
+		.text('BOSTON SEWAGE') //Taxonomy
+		.attr('stroke-width', 1)
+		.style("text-anchor", "middle");
+		// .style("text-anchor", "start");
+
+	g.append('text')
+		.attr('class', 'middleTextBIG')
+		.attr('x', -pos_left_x +170)
+		.attr('y', -height*0.26+40 )
+		.text('BACTERIAL PROFILE') //Taxonomy
+		.attr('stroke-width', 1)
+		.style("text-anchor", "middle");
+		// .style("text-anchor", "start");
+
+	g.append('rect')
+		.attr('x', -pos_left_x +20)
+		.attr('y', -height*0.11-10)
+		.attr('width', 305)
+		.attr('height', 257)
+		.attr('stroke', '#fff')
+		.attr('stroke-width', 0.1)
+		.style('fill', 'none');
+		// .style('fill', 'rgba(255,255,255,0.03)');
+
+	// g.append('line') //upper line
+	// 		.attr('x1', -pos_left_x -80)
+	// 		.attr('y1', -height*0.3 + 55 )
+	// 		.attr('x2', -pos_left_x + 185)
+	// 		.attr('y2', -height*0.3 + 55 )
+	// 		.attr('stroke', '#fff')
+	// 		.style('opacity', 0.4)
+	// 		.attr('stroke-width', 1);
+
+	// g.append("polygon")       // attach a polygon
+ //    	.style("stroke", "rgba(255,255,255,0.6)")  // colour the line
+ //    	.attr('stroke-width', 1)
+ //    	.style("fill", "none")     // remove any fill colour
+ //    	.attr("points", "-5,10, -5,-10, 10,0")
+ //    	.on("mouseover", function() {
+ //    		d3.select(this).style("fill", "rgba(255,255,255,0.7)");
+ //    	})
+ //    	.on("mouseout", function() {
+ //    		d3.select(this).style("fill", "none");
+ //    	});
+
+
+	// g.append('text')
+	// 	.attr('class', 'middleTextBIG')
+	// 	.attr('x', pos_left_x)
 	// 	.attr('y', -100 )
 	// 	.text('BOSTON SEWAGE') //Bacterial Profile
 	// 	.attr('stroke-width', 1)
@@ -80,64 +146,39 @@ function textGuide() {
 
 	// g.append('text')
 	// 	.attr('class', 'middleTextBIG')
-	// 	.attr('x', -400)
+	// 	.attr('x', pos_left_x)
 	// 	.attr('y', -80 )
 	// 	.text('BACTERIAL PROFILE') //Bacterial Profile
 	// 	.attr('stroke-width', 1)
 	// 	.style("text-anchor", "middle");
 
 	// g.append('line') //upper line
-	// 		.attr('x1', -480+1 )
+	// 		.attr('x1', pos_left_x - 76)
 	// 		.attr('y1', -70 )
-	// 		.attr('x2', -320-1 )
+	// 		.attr('x2', pos_left_x + 76)
 	// 		.attr('y2', -70 )
 	// 		.attr('stroke', '#fff')
-	// 		.style('opacity', 0.65)
+	// 		.style('opacity', 0.3)
 	// 		.attr('stroke-width', 1);
 
-	g.append('text')
-		.attr('class', 'middleTextBIG')
-		.attr('x', pos_left_x)
-		.attr('y', -100 )
-		.text('BOSTON SEWAGE') //Bacterial Profile
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+	// g.append('line') //lower line
+	// 		.attr('x1', pos_left_x )
+	// 		.attr('y1', 0 )
+	// 		.attr('x2', -outerRadius*1.03) // -268
+	// 		// .attr('x2', outerRadius*1.03)
+	// 		.attr('y2', 0 )
+	// 		.attr('stroke', '#fff')
+	// 		.style('opacity', 0.3)
+	// 		.attr('stroke-width', 1);
 
-	g.append('text')
-		.attr('class', 'middleTextBIG')
-		.attr('x', pos_left_x)
-		.attr('y', -80 )
-		.text('BACTERIAL PROFILE') //Bacterial Profile
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
-
-	g.append('line') //upper line
-			.attr('x1', pos_left_x - 76)
-			.attr('y1', -70 )
-			.attr('x2', pos_left_x + 76)
-			.attr('y2', -70 )
-			.attr('stroke', '#fff')
-			.style('opacity', 0.3)
-			.attr('stroke-width', 1);
-
-	g.append('line') //lower line
-			.attr('x1', pos_left_x )
-			.attr('y1', 0 )
-			.attr('x2', -outerRadius*1.03) // -268
-			// .attr('x2', outerRadius*1.03)
-			.attr('y2', 0 )
-			.attr('stroke', '#fff')
-			.style('opacity', 0.3)
-			.attr('stroke-width', 1);
-
-	g.append('line') //vertical line
-			.attr('x1', pos_left_x )
-			.attr('y1', 0 )
-			.attr('x2', pos_left_x )
-			.attr('y2', -70 )
-			.attr('stroke', '#fff')
-			.style('opacity', 0.3)
-			.attr('stroke-width', 1);
+	// g.append('line') //vertical line
+	// 		.attr('x1', pos_left_x )
+	// 		.attr('y1', 0 )
+	// 		.attr('x2', pos_left_x )
+	// 		.attr('y2', -70 )
+	// 		.attr('stroke', '#fff')
+	// 		.style('opacity', 0.3)
+	// 		.attr('stroke-width', 1);
 }
 
 var domain_taxo, phylum_taxo, class_taxo, order_taxo, 
@@ -148,14 +189,14 @@ var domain_name, phylum_name, class_name, order_name,
 
 var yScale = d3.scale.linear()
 				.domain([0, 5])  
-				.range([-height*0.2, height*0.2]);
+				.range([-height*0.05, height*0.28 - 0]);
 				// .range([-90, outerRadius-90]);
 				// .range([-height*0.18, height*0.25]);
 
 // phylum,class,order,family,genus,value
 
-var xpos = -1 * pos_left_x - 40;
-var xpos2 = -1 * pos_left_x + 40;
+var xpos = -1 * pos_left_x +50;
+var xpos2 = -1 * pos_left_x + 125;
 
 // var xpos =  -width/2 + 30;
 // var xpos2 = xpos + 72;
@@ -168,8 +209,8 @@ function texonomyList() {
 		.attr('y', yScale(0) )
 		.text('DOMAIN') //Bacterial Profile
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
 		// .style("text-anchor", "middle");
+		.style("text-anchor", "start");
 
 	phylum_taxo = g.append('text')
 		.attr('class', 'taxoName')
@@ -177,7 +218,8 @@ function texonomyList() {
 		.attr('y', yScale(1) )
 		.text('PHYLUM') //Bacterial Profile
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+		// .style("text-anchor", "middle");
+		.style("text-anchor", "start");
 
 	class_taxo = g.append('text')
 		.attr('class', 'taxoName')
@@ -185,7 +227,8 @@ function texonomyList() {
 		.attr('y', yScale(2) )
 		.text('CLASS') //Bacterial Profile
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+		// .style("text-anchor", "middle");
+		.style("text-anchor", "start");
 
 	order_taxo = g.append('text')
 		.attr('class', 'taxoName')
@@ -193,7 +236,9 @@ function texonomyList() {
 		.attr('y', yScale(3) )
 		.text('ORDER') //Bacterial Profile
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+		// .style('opacity', 0.3)
+		// .style("text-anchor", "middle");
+		.style("text-anchor", "start");
 
 	family_taxo = g.append('text')
 		.attr('class', 'taxoName')
@@ -201,7 +246,8 @@ function texonomyList() {
 		.attr('y', yScale(4) )
 		.text('FAMILY') //Bacterial Profile
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+		// .style("text-anchor", "middle");
+		.style("text-anchor", "start");
 
 	genus_taxo = g.append('text')
 		.attr('class', 'taxoName')
@@ -209,7 +255,8 @@ function texonomyList() {
 		.attr('y', yScale(5) )
 		.text('GENUS') //Bacterial Profile
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+		// .style("text-anchor", "middle");
+		.style("text-anchor", "start");
 
 	///////////////////////////////////////////////
 	domain_name = g.append('text')
@@ -265,15 +312,15 @@ function texonomyList() {
 		.style('fill-opacity', 0)
 		.style("text-anchor", "start");
 
-	var box_w = 86;
+	var box_w = 84;
 
 	selectedBox = g.append('rect')
-		.attr('x', xpos - box_w/2)
+		.attr('x', xpos -12)
 		.attr('y', yScale(0) - 20 )
 		.attr('width', box_w)
 		.attr('height', 30)
 		.style('fill', 'rgba(0,0,0,0)')
-		.attr('stroke-width', 1)
+		.attr('stroke-width', 0)
 		.attr('stroke', '#fff');
 
 }
@@ -289,16 +336,16 @@ function changeTaxoName(p, c, o, f, g) {
 	phylum_name.transition().duration(100).style('fill-opacity', 0.9);
 
 	class_name.text(c);
-	class_name.transition().duration(100).style('fill-opacity', 0.9);
+	class_name.transition().duration(100).style('fill-opacity', 0.82);
 
 	order_name.text(o);
-	order_name.transition().duration(100).style('fill-opacity', 0.9);
+	order_name.transition().duration(100).style('fill-opacity', 0.74);
 
 	family_name.text(f);
-	family_name.transition().duration(100).style('fill-opacity', 0.9);
+	family_name.transition().duration(100).style('fill-opacity', 0.6);
 
 	genus_name.text(g);
-	genus_name.transition().duration(100).style('fill-opacity', 0.9);
+	genus_name.transition().duration(100).style('fill-opacity', 0.45);
 }
  
 

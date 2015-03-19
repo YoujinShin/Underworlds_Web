@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 var width = 1000,
 // var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = width * 0.65,
+	height = width * 0.644,
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -24,13 +24,13 @@ svg.append('rect')
 // var tx = width/2 + margin.left -50;
 // var ty = height/2 + margin.top -20;
 
-var tx = width/2 + margin.left;
+var tx = width/2 + margin.left -220;
 var ty = height/2 + margin.top;
 
 var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
-var innerRadius = height*0.3;
+var innerRadius = height*0.31;
 var outerRadius = height*0.46;
 
 var linearScale = d3.scale.linear()
@@ -79,7 +79,7 @@ function draw(error, genus, root) {
 					.attr('y1', function(d, i) { return getY1(d.value, i); })
 					.attr('x2', function(d, i) { return getX(d.value, i); })
 					.attr('y2', function(d, i) { return getY(d.value, i); })
-					.style('opacity', 0.1) // 0.18
+					.style('opacity', 0.2) // 0.18
 					.attr('stroke-width', 1)
 					.attr('stroke', '#92A7B4')
 					.on("mouseover", function(d) {
@@ -162,9 +162,9 @@ function draw(error, genus, root) {
       .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
       .style("stroke", '#92A7B4')
-      .attr("stroke-width", 0.4)
+      .attr("stroke-width", 0.5) // 0.4
       .style("fill",'#92A7B4')
-      .style("fill-opacity", 0.2)
+      .style("fill-opacity", 0.1) // 0.2
       .style("fill-rule", "evenodd")
       .each(stash)
       .on("mouseover", function(d) {
