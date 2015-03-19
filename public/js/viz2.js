@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 var width = 1000,
 // var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = width * 0.644,
+	height = width * 0.645,
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -24,14 +24,14 @@ svg.append('rect')
 // var tx = width/2 + margin.left -50;
 // var ty = height/2 + margin.top -20;
 
-var tx = width/2 + margin.left -220;
+var tx = width/2 + margin.left - 60;
 var ty = height/2 + margin.top;
 
 var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
-var innerRadius = height*0.31;
-var outerRadius = height*0.46;
+var innerRadius = height*0.37;
+var outerRadius = height*0.48;
 
 var linearScale = d3.scale.linear()
 					.domain([0, 4.524]) // [0, max log value] -> radius
@@ -162,7 +162,7 @@ function draw(error, genus, root) {
       .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
       .style("stroke", '#92A7B4')
-      .attr("stroke-width", 0.5) // 0.4
+      .attr("stroke-width", 0.45) // 0.4
       .style("fill",'#92A7B4')
       .style("fill-opacity", 0.1) // 0.2
       .style("fill-rule", "evenodd")

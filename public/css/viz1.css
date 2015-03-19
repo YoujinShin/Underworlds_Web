@@ -2,7 +2,7 @@
 #viz {
 	position: relative;
 	text-align: center;
-	top: 16px;
+	top: 26px;
 	/*padding-top: 90px;
 	padding-bottom: 0px;*/
 }
@@ -57,7 +57,7 @@
 
 .middleText {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 11px;
+	font-size: 10px;
 	fill: rgba(255,255,255,0.55);
 	stroke: none;
 	text-align: left;
@@ -67,8 +67,8 @@
 
 .middleTextBIG {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
-	fill: rgba(255,255,255,0.4);
+	font-size: 10px;
+	fill: rgba(255,255,255,0.8);
 	stroke: none;
 	text-align: left;
 	letter-spacing: 1px;
@@ -109,10 +109,10 @@
 #taxo {
 	position: absolute;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-size: 10px;
 	color: rgba(255,255,255,0.8);
 	text-align: left;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-weight: lighter;
 	left: 100px;
 	top : 100px;
@@ -120,7 +120,7 @@
 
 .taxoName {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-size: 10px;
 	fill: rgba(255,255,255,0.3);
 	stroke: none;
 	letter-spacing: 1px;
@@ -129,9 +129,9 @@
 
 .selected {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-size: 10px;
 	fill: rgba(255,255,255,0.9);
 	stroke: none;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-weight: lighter;
 }

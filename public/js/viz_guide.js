@@ -1,7 +1,7 @@
 var radiusValues = [1, 10, 100, 1000, 10000, 100000];
 // var pos_left_x = - width * 0.35;
 // var pos_left_x = width * 0.6-20;
-var pos_left_x = -width * 0.35;
+var pos_left_x = -width * 0.31;
 // var pos_left_x = width/2 - 90;
 
 function radiusGuide() {
@@ -9,8 +9,9 @@ function radiusGuide() {
 	for(var i = 0; i < radiusValues.length; i++) {
 
 		var r = radiusValues[i];
-		// var x = -pos_left_x - 70;
-		var x = -outerRadius;
+		var x = pos_left_x - 30;
+		// var x = pos_left_x;
+		// var x = -outerRadius;
 
 		g.append('circle')
 			.attr('r', linearScale( Math.log10(r) ) )
@@ -27,27 +28,27 @@ function radiusGuide() {
 
 		g.append('text')
 			.attr('class', 'scaleText')
-			// .attr('x', x + 2)
-			.attr('x', 0)
-			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) + 10)
+			.attr('x', x -25)
+			// .attr('x', 0)
+			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ))
 			// .attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) + 10)
 			.text(r)
-			.style('opacity', 0)
+			.style('opacity', 1)
 			.attr('stroke-width', 1)
-			.style("text-anchor", "middle");
+			// .style("text-anchor", "middle");
 			// .style("text-anchor", "start");
-			// .style("text-anchor", "end");
+			.style("text-anchor", "end");
 
-		// g.append('line')
-		// 	.attr('x1', 0 )
-		// 	.attr('y1', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
-		// 	.attr('x2', x - 1)
-		// 	.attr('y2', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
-		// 	.text(r)
-		// 	.attr('stroke', '#fff')
-		// 	.style("stroke-dasharray", ("1,4"))
-		// 	.style('opacity', 0.17)
-		// 	.attr('stroke-width', 1);
+		g.append('line')
+			.attr('x1', 0 )
+			.attr('y1', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
+			.attr('x2', x - 20)
+			.attr('y2', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
+			.text(r)
+			.attr('stroke', '#fff')
+			.style("stroke-dasharray", ("1,4"))
+			.style('opacity', 0.17)
+			.attr('stroke-width', 1);
 	}
 }
 
@@ -56,11 +57,19 @@ function textGuide() {
 
 	// g.append('text')
 	// 	.attr('class', 'middleText')
-	// 	.attr('x', 0)
-	// 	.attr('y', 5)
+	// 	.attr('x', innerRadius + 72)
+	// 	.attr('y', -7)
 	// 	.text('Taxonomy') //Taxonomy
 	// 	.attr('stroke-width', 1)
 	// 	.style("text-anchor", "middle");
+
+	g.append('text')
+		.attr('class', 'middleText')
+		.attr('x', -innerRadius - 139)
+		.attr('y', 3)
+		.text('Taxonomical Hits') //Taxonomy
+		.attr('stroke-width', 1)
+		.style("text-anchor", "middle");
 
 	// g.append('text')
 	// 	.attr('class', 'middleText')
@@ -86,34 +95,24 @@ function textGuide() {
 	// 	.attr('stroke-width', 1)
 	// 	.style("text-anchor", "middle");
 
-	g.append('text')
-		.attr('class', 'middleTextBIG')
-		.attr('x', -pos_left_x +170)
-		.attr('y', -height*0.26 )
-		.text('BOSTON SEWAGE') //Taxonomy
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
-		// .style("text-anchor", "start");
+	// g.append('text')
+	// 	.attr('class', 'middleTextBIG')
+	// 	.attr('x', 0)
+	// 	.attr('y', -5)
+	// 	.text('Boston Sewage') //Taxonomy
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
+	// 	// .style("text-anchor", "start");
 
-	g.append('text')
-		.attr('class', 'middleTextBIG')
-		.attr('x', -pos_left_x +170)
-		.attr('y', -height*0.26+40 )
-		.text('BACTERIAL PROFILE') //Taxonomy
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
-		// .style("text-anchor", "start");
+	// g.append('text')
+	// 	.attr('class', 'middleTextBIG')
+	// 	.attr('x', 0)
+	// 	.attr('y', 18)
+	// 	.text('Bacterial Profile') //Taxonomy
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
+	// 	// .style("text-anchor", "start");
 
-	g.append('rect')
-		.attr('x', -pos_left_x +20)
-		.attr('y', -height*0.11-10)
-		.attr('width', 305)
-		.attr('height', 257)
-		.attr('stroke', '#fff')
-		.style("stroke-dasharray", ("1,4"))
-		.attr('stroke-width', 0.3)
-		.style('fill', 'none');
-		// .style('fill', 'rgba(255,255,255,0.03)');
 
 	// g.append('line') //upper line
 	// 		.attr('x1', -pos_left_x -80)
@@ -137,21 +136,21 @@ function textGuide() {
  //    	});
 
 
-	// g.append('text')
-	// 	.attr('class', 'middleTextBIG')
-	// 	.attr('x', pos_left_x)
-	// 	.attr('y', -100 )
-	// 	.text('BOSTON SEWAGE') //Bacterial Profile
-	// 	.attr('stroke-width', 1)
-	// 	.style("text-anchor", "middle");
+	g.append('text')
+		.attr('class', 'middleTextBIG')
+		.attr('x', 0)
+		.attr('y', -5 )
+		.text('BOSTON SEWAGE') //Bacterial Profile
+		.attr('stroke-width', 1)
+		.style("text-anchor", "middle");
 
-	// g.append('text')
-	// 	.attr('class', 'middleTextBIG')
-	// 	.attr('x', pos_left_x)
-	// 	.attr('y', -80 )
-	// 	.text('BACTERIAL PROFILE') //Bacterial Profile
-	// 	.attr('stroke-width', 1)
-	// 	.style("text-anchor", "middle");
+	g.append('text')
+		.attr('class', 'middleTextBIG')
+		.attr('x', 0)
+		.attr('y', 15 )
+		.text('BACTERIAL PROFILE') //Bacterial Profile
+		.attr('stroke-width', 1)
+		.style("text-anchor", "middle");
 
 	// g.append('line') //upper line
 	// 		.attr('x1', pos_left_x - 76)
@@ -190,7 +189,7 @@ var domain_name, phylum_name, class_name, order_name,
 
 var yScale = d3.scale.linear()
 				.domain([0, 5])  
-				.range([-height*0.05, height*0.28 - 0]);
+				.range([-height*0.18 +20, height*0.18 +20]);
 				// .range([-90, outerRadius-90]);
 				// .range([-height*0.18, height*0.25]);
 
@@ -203,6 +202,34 @@ var xpos2 = -1 * pos_left_x + 125;
 // var xpos2 = xpos + 72;
 
 function texonomyList() {
+
+	g.append('line') // right
+		.attr('x1', radius)
+		.attr('y1', 0)
+		.attr('x2', -pos_left_x+30)
+		.attr('y2', 0)
+		.attr('stroke-width', 0.45)
+		.attr("stroke", "#fff")
+		.style("text-anchor", "start");
+
+	g.append('line') // right vertical
+		.attr('x1',  -pos_left_x+30)
+		.attr('y1', -90)
+		.attr('x2', -pos_left_x+30)
+		.attr('y2', 125)
+		.attr('stroke-width', 0.45)
+		.attr("stroke", "#fff")
+		.style("text-anchor", "start");
+
+	g.append('line') // left
+		.attr('x1', -outerRadius-5)
+		.attr('y1', 0)
+		.attr('x2', pos_left_x )
+		.attr('y2', 0)
+		.attr('stroke-width', 0.45)
+		.attr("stroke", "#fff")
+		.style("text-anchor", "start");
+
 
 	domain_taxo = g.append('text')
 		.attr('class', 'taxoName')
