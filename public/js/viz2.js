@@ -24,7 +24,7 @@ svg.append('rect')
 // var tx = width/2 + margin.left -50;
 // var ty = height/2 + margin.top -20;
 
-var tx = width/2 + margin.left - 60;
+var tx = width/2 + margin.left - 40;
 var ty = height/2 + margin.top;
 
 var g = svg.append('g')

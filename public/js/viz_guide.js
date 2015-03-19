@@ -195,8 +195,8 @@ var yScale = d3.scale.linear()
 
 // phylum,class,order,family,genus,value
 
-var xpos = -1 * pos_left_x +50;
-var xpos2 = -1 * pos_left_x + 125;
+var xpos = -1 * pos_left_x +40;
+var xpos2 = -1 * pos_left_x + 110;
 
 // var xpos =  -width/2 + 30;
 // var xpos2 = xpos + 72;
@@ -206,16 +206,16 @@ function texonomyList() {
 	g.append('line') // right
 		.attr('x1', radius)
 		.attr('y1', 0)
-		.attr('x2', -pos_left_x+30)
+		.attr('x2', -pos_left_x+20)
 		.attr('y2', 0)
 		.attr('stroke-width', 0.45)
 		.attr("stroke", "#fff")
 		.style("text-anchor", "start");
 
 	g.append('line') // right vertical
-		.attr('x1',  -pos_left_x+30)
+		.attr('x1',  -pos_left_x+20)
 		.attr('y1', -90)
-		.attr('x2', -pos_left_x+30)
+		.attr('x2', -pos_left_x+20)
 		.attr('y2', 125)
 		.attr('stroke-width', 0.45)
 		.attr("stroke", "#fff")
