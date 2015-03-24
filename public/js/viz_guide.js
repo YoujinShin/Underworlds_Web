@@ -66,10 +66,18 @@ function textGuide() {
 	g.append('text')
 		.attr('class', 'middleText')
 		.attr('x', -innerRadius - 139)
-		.attr('y', 3)
-		.text('Taxonomical Hits') //Taxonomy
+		.attr('y', 3 - 8)
+		.text('Taxonomical') //Taxonomy
 		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+		.style("text-anchor", "end");
+
+	g.append('text')
+		.attr('class', 'middleText')
+		.attr('x', -innerRadius - 139)
+		.attr('y', 3 + 8)
+		.text('Hits') //Taxonomy
+		.attr('stroke-width', 1)
+		.style("text-anchor", "end");
 
 	// g.append('text')
 	// 	.attr('class', 'middleText')
@@ -139,16 +147,24 @@ function textGuide() {
 	g.append('text')
 		.attr('class', 'middleTextBIG')
 		.attr('x', 0)
-		.attr('y', -5 )
-		.text('BOSTON SEWAGE') //Bacterial Profile
+		.attr('y', -15 )
+		.text('SEWAGE') //Bacterial Profile
 		.attr('stroke-width', 1)
 		.style("text-anchor", "middle");
 
 	g.append('text')
 		.attr('class', 'middleTextBIG')
 		.attr('x', 0)
-		.attr('y', 15 )
-		.text('BACTERIAL PROFILE') //Bacterial Profile
+		.attr('y', 5 )
+		.text('BACTERIAL') //Bacterial Profile
+		.attr('stroke-width', 1)
+		.style("text-anchor", "middle");
+
+	g.append('text')
+		.attr('class', 'middleTextBIG')
+		.attr('x', 0)
+		.attr('y', 25)
+		.text('PROFILE') //Bacterial Profile
 		.attr('stroke-width', 1)
 		.style("text-anchor", "middle");
 
@@ -204,7 +220,7 @@ var xpos2 = -1 * pos_left_x + 110;
 function texonomyList() {
 
 	g.append('line') // right
-		.attr('x1', radius)
+		.attr('x1', radius - 15)
 		.attr('y1', 0)
 		.attr('x2', -pos_left_x+20)
 		.attr('y2', 0)
@@ -222,10 +238,19 @@ function texonomyList() {
 		.style("text-anchor", "start");
 
 	g.append('line') // left
-		.attr('x1', -outerRadius-5)
+		.attr('x1', -outerRadius-9)
 		.attr('y1', 0)
-		.attr('x2', pos_left_x )
+		.attr('x2', pos_left_x -10)
 		.attr('y2', 0)
+		.attr('stroke-width', 0.45)
+		.attr("stroke", "#fff")
+		.style("text-anchor", "start");
+
+	g.append('line') // left vertical
+		.attr('x1', pos_left_x - 10)
+		.attr('y1', -15)
+		.attr('x2', pos_left_x - 10)
+		.attr('y2', 15)
 		.attr('stroke-width', 0.45)
 		.attr("stroke", "#fff")
 		.style("text-anchor", "start");

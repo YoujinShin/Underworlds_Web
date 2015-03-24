@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 var width = 1000,
 // var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = width * 0.645,
+	height = width * 0.65,
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -30,7 +30,7 @@ var ty = height/2 + margin.top;
 var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
-var innerRadius = height*0.37;
+var innerRadius = height*0.32;
 var outerRadius = height*0.48;
 
 var linearScale = d3.scale.linear()
@@ -48,7 +48,8 @@ queue()
 	.await(draw);
 
 var radius = Math.min(width, height) / 2,
-	radius = innerRadius * 0.85,
+	// radius = innerRadius * 1.092, // 일치
+	radius = innerRadius * 0.9,
     color = d3.scale.category20c();
 
 var partition = d3.layout.partition()
@@ -161,11 +162,19 @@ function draw(error, genus, root) {
     .enter().append("path")
       .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
-      .style("stroke", '#92A7B4')
-      .attr("stroke-width", 0.45) // 0.4
+      // .style("stroke", '#92A7B4')
+      .style("stroke", '#15202D')
+      .attr("stroke-width", 1.2) // 0.4
       .style("fill",'#92A7B4')
-      .style("fill-opacity", 0.1) // 0.2
+      .style("fill-opacity", 0.16) // 0.2
       .style("fill-rule", "evenodd")
+      .style('visibility', function(d) {
+      	if(d.depth == 5) {
+      		return 'hidden';
+      	} else {
+      		return 'visible';
+      	}
+      })
       .each(stash)
       .on("mouseover", function(d) {
 

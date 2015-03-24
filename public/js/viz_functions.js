@@ -154,6 +154,7 @@ function selectDots2(genus, family) {
 
 function unselectArc(path) {
 	svg.selectAll("path").each(function(e) {
+		console.log(e);
 		d3.select(this).style("fill-opacity", 0.1);
 	});
 }
