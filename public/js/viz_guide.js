@@ -285,9 +285,11 @@ var myVar;
 
 function makeButton() {
 
+	var dy = 10;
+
 	play = g.append("image")
 	   .attr('x',-pos_left_x+20 + 10 + 25)
-	   .attr('y',160 + 10)
+	   .attr('y',160 + 10 + dy)
 	   .attr('width', 16)
 	   .attr('height', 16)
 	   .style('opacity', 0.6)
@@ -295,31 +297,31 @@ function makeButton() {
 
 	stop1 = g.append('rect')
 		.attr('x',  -pos_left_x+20 + 10 + 22)
-		.attr('y', 160 + 10)
+		.attr('y', 160 + 10+ dy)
 		.attr('width', 6)
 		.attr('height', 16)
 		.style('fill', '#fff')
 		.style('fill-opacity', 0.0)
 		.attr('stroke', '#fff')
-		.style('opacity', 0.6)
+		.style('opacity', 0.5)
 		.style('visibility', 'hidden')
-		.attr('stroke-width', 1.3);
+		.attr('stroke-width', 1.0);
 
 	stop2 = g.append('rect')
 		.attr('x',  -pos_left_x+20 + 10 + 22 + 15)
-		.attr('y', 160 + 10)
+		.attr('y', 160 + 10+ dy)
 		.attr('width', 6)
 		.attr('height', 16)
 		.style('fill', '#fff')
 		.style('fill-opacity', 0.0)
 		.attr('stroke', '#fff')
-		.style('opacity', 0.6)
+		.style('opacity', 0.5)
 		.style('visibility', 'hidden')
-		.attr('stroke-width', 1.3);
+		.attr('stroke-width', 1.0);
 
 	button = g.append('rect')
 		.attr('x',  -pos_left_x+20 + 10)
-		.attr('y', 160)
+		.attr('y', 160+ dy)
 		// .attr('y', outerRadius - 60)
 		.attr('width', 64)
 		.attr('height', 36)
@@ -335,19 +337,40 @@ function makeButton() {
 		})
 		.on('click', function() {
 
-			if(clicked) {
+			animation();
+		});
+
+}
+
+function animation() {
+	if(clicked) {
 				clicked = false;
+				play.style('visibility', 'visible');
+				stop1.style('visibility', 'hidden');
+				stop2.style('visibility', 'hidden');
 			} else {
 				clicked = true;
+				play.style('visibility', 'hidden');
+				stop1.style('visibility', 'visible');
+				stop2.style('visibility', 'visible');
 			}
 
 			if(clicked) {
-				myVar = setTimeout(function(){alert('Hello')},100);
+				myVar = setInterval(function(){
+					console.log('Hello');
+
+					order--;
+					if(order > 510) {
+						order = 0;
+					}else if(order < 0) {
+						order = 510;
+					}
+
+					selectOne();
+				},1000);
+				// setInterval(function(){ alert("Hello"); }, 3000);
+
 			} else {
 				clearTimeout(myVar);
 			}
-			
-
-		});
-
 }

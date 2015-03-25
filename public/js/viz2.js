@@ -72,7 +72,7 @@ function draw(error, genus, root) {
 	radiusGuide();
 	textGuide();
 	texonomyList();
-	// makeButton();
+	makeButton();
 
 	lines = g.selectAll('.line')
 					.data(genus)
@@ -89,7 +89,9 @@ function draw(error, genus, root) {
 						unselectLine();
 						unselectDots();
 
-						// console.log(i);
+						order = i;
+						clicked = true;
+						animation();
 						
 						d3.select(this).attr("stroke-width", 2);
 						d3.select(this).style('opacity', 0.9);
@@ -130,6 +132,10 @@ function draw(error, genus, root) {
 
 						unselectLine();
 						unselectDots();
+
+						order = i;
+						clicked = true;
+						animation();
 
 						d3.select(this).style('opacity', 0.9);
 
@@ -181,6 +187,10 @@ function draw(error, genus, root) {
       .each(stash)
       .on("mouseover", function(d) {
 
+      		// order = i;
+			clicked = true;
+			animation();
+
 			d3.select(this).style("fill-opacity", 0.9);
 
 			tooltip.text(d.name);
@@ -205,6 +215,8 @@ function draw(error, genus, root) {
 		});
 
 	selectOne();
+	// clicked = true;
+	animation();
 }
 
 function getX(d, i) {
@@ -259,9 +271,12 @@ var valueScale = d3.scale.linear()
 					.range([276, 475]);
 					// .range([0, 510]);
 
-function selectOne() {
+// var order = Math.floor(valueScale(Math.random()) + 1);
+var order = 475;
 
-	var order = Math.floor(valueScale(Math.random()) + 1);
+function selectOne() {
+	unselectDots();
+	unselectLine();
 
 	lines.each(function(d, i) {
 		if(i == order) {
