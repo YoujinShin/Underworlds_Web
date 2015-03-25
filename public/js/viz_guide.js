@@ -49,18 +49,20 @@ function radiusGuide() {
 function textGuide() {
 
 	g.append('text')
-		.attr('class', 'middleText')
+		// .attr('class', 'middleText')
+		.attr('class', 'middleTextBIG')
 		.attr('x', -innerRadius - 139)
 		.attr('y', 3 - 8)
-		.text('Taxonomical') //Taxonomy
+		.text('TAXONOMICAL') 
+		// .text('Taxonomical') //Taxonomy
 		.attr('stroke-width', 1)
 		.style("text-anchor", "end");
 
 	g.append('text')
-		.attr('class', 'middleText')
+		.attr('class', 'middleTextBIG')
 		.attr('x', -innerRadius - 139)
 		.attr('y', 3 + 8)
-		.text('Hits') //Taxonomy
+		.text('HITS') //Taxonomy
 		.attr('stroke-width', 1)
 		.style("text-anchor", "end");
 
