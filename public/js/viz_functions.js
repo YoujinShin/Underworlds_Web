@@ -192,14 +192,8 @@ function selectLine(genus, family) {
 function unselectLine() {
 	lines.each(function(e) {
 		d3.select(this).attr("stroke-width", 1);
-		d3.select(this).style('opacity', 0.2);
+		d3.select(this).style('opacity', 0.22);
 	});
 }
 
-// var myVar=setInterval(function () {myTimer()}, 1000);
-
-function myTimer() {
-    var d = new Date();
-    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-}
 

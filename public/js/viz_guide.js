@@ -367,7 +367,7 @@ function animation() {
 					}
 
 					selectOne();
-				},1000);
+				}, 120);
 				// setInterval(function(){ alert("Hello"); }, 3000);
 
 			} else {
