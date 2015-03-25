@@ -48,7 +48,7 @@ function selectParents2(d, path) {
 
 var opacScale = d3.scale.linear()
 					.domain([5, 1])  
-					.range([0.4, 0.98]);
+					.range([0.4, 0.97]);
 
 function selectArc(path, name0, name1, name2, name3, name4, depth) {
 
@@ -64,22 +64,35 @@ function selectArc(path, name0, name1, name2, name3, name4, depth) {
 		var e_depth = e.depth;
 		    
 		if(e.name==name0 && e.depth==depth) {
+			d3.select(this).style("stroke", '#15202D');
+			// d3.select(this).style("fill", '#15202D');
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else if(e.name==name1 && e.depth==(depth-1)) {
+			d3.select(this).style("stroke", '#15202D');
+			// d3.select(this).style("fill", '#15202D');
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else if(e.name==name2 && e.depth==(depth-2)) {
+			d3.select(this).style("stroke", '#15202D');
+			// d3.select(this).style("fill", '#15202D');
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else if(e.name==name3 && e.depth==(depth-3)) {
+			d3.select(this).style("stroke", '#15202D');
+			// d3.select(this).style("fill", '#15202D');
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else if(e.name==name4 && e.depth==(depth-4)) {
+			d3.select(this).style("stroke", '#15202D');
+			// d3.select(this).style("fill", '#15202D');
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else {
-			d3.select(this).style("fill-opacity", 0.1);
+			d3.select(this).style('stroke', 'rgba(146,167,180,0.2)')
+			// d3.select(this).style("stroke", '#92A7B4');
+			// d3.select(this).style("fill-opacity", 0.05);
+			d3.select(this).style("fill-opacity", 0.05);
 		}
 	});
 }
@@ -155,7 +168,7 @@ function selectDots2(genus, family) {
 function unselectArc(path) {
 	svg.selectAll("path").each(function(e) {
 		console.log(e);
-		d3.select(this).style("fill-opacity", 0.1);
+		d3.select(this).style("fill-opacity", 0.05);
 	});
 }
 
@@ -181,5 +194,12 @@ function unselectLine() {
 		d3.select(this).attr("stroke-width", 1);
 		d3.select(this).style('opacity', 0.2);
 	});
+}
+
+// var myVar=setInterval(function () {myTimer()}, 1000);
+
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
 }
 

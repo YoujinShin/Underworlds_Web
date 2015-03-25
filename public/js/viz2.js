@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 var width = 1000,
 // var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = width * 0.65,
+	height = width * 0.66,
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -30,7 +30,7 @@ var ty = height/2 + margin.top;
 var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
-var innerRadius = height*0.32;
+var innerRadius = height*0.3;
 var outerRadius = height*0.48;
 
 var linearScale = d3.scale.linear()
@@ -72,6 +72,7 @@ function draw(error, genus, root) {
 	radiusGuide();
 	textGuide();
 	texonomyList();
+	// makeButton();
 
 	lines = g.selectAll('.line')
 					.data(genus)
@@ -83,17 +84,17 @@ function draw(error, genus, root) {
 					.style('opacity', 0.2) // 0.18
 					.attr('stroke-width', 1)
 					.attr('stroke', '#92A7B4')
-					.on("mouseover", function(d) {
+					.on("mouseover", function(d, i) {
 
 						unselectLine();
 						unselectDots();
-						
 
+						// console.log(i);
+						
 						d3.select(this).attr("stroke-width", 2);
 						d3.select(this).style('opacity', 0.9);
 
 						selectParents2(d, path);
-
 						// selectDots(d.genus);
 
 						selectDots2(d.genus, d.family);
@@ -162,11 +163,13 @@ function draw(error, genus, root) {
     .enter().append("path")
       .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
-      // .style("stroke", '#92A7B4')
-      .style("stroke", '#15202D')
-      .attr("stroke-width", 1.2) // 0.4
-      .style("fill",'#92A7B4')
-      .style("fill-opacity", 0.16) // 0.2
+      // .style("stroke", '#92A7B4') // white
+      .style('stroke', 'rgba(146,167,180,0.2)')
+      // .style("stroke", '#15202D') // blue
+      .attr("stroke-width", 1.2) // 0.4,  1.1
+      .style("fill",'#92A7B4') // white
+      // .style("fill", '#15202D') // blue
+      .style("fill-opacity", 0.05) // 0.2
       .style("fill-rule", "evenodd")
       .style('visibility', function(d) {
       	if(d.depth == 5) {
@@ -200,6 +203,8 @@ function draw(error, genus, root) {
 			// d3.select(this).attr("stroke-width", 0.4);
 			tooltip.style("visibility", "hidden");
 		});
+
+	selectOne();
 }
 
 function getX(d, i) {
@@ -249,3 +254,25 @@ function arcTween(a) {
 
 d3.select(self.frameElement).style("height", height + "px");
 
+var valueScale = d3.scale.linear()
+					.domain([0, 1]) // [0, max log value] -> radius
+					.range([276, 475]);
+					// .range([0, 510]);
+
+function selectOne() {
+
+	var order = Math.floor(valueScale(Math.random()) + 1);
+
+	lines.each(function(d, i) {
+		if(i == order) {
+			d3.select(this).attr("stroke-width", 2);
+			d3.select(this).style('opacity', 0.9);
+
+			selectParents2(d, path);
+
+			selectDots2(d.genus, d.family);
+			selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
+		}
+	});
+
+}
