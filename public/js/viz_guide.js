@@ -291,13 +291,23 @@ function makeButton() {
 	var w = 50;
 	var h = w * 0.6;
 
-	play = g.append("image")
-	   .attr('x',-pos_left_x+20 + 10 + 25 - 5)
-	   .attr('y',160 + 10 + dy - 2)
-	   .attr('width', h*0.5)
-	   .attr('height', h*0.5)
-	   .style('opacity', 0.5)
-	   .attr("xlink:href","triangle.png");
+	// play = g.append("image")
+	//    .attr('x',-pos_left_x+20 + 10 + 25 - 5)
+	//    .attr('y',160 + 10 + dy - 2)
+	//    .attr('width', h*0.5)
+	//    .attr('height', h*0.5)
+	//    .style('opacity', 0.5)
+	//    .attr("xlink:href","triangle.png");
+
+	var tx = -pos_left_x+20 + 10 + 25 - 5;
+	var ty = 160 + 10 + dy - 2;
+
+	play = g.append("polygon")
+		.attr('points', "340,157, 340,171, 357,164")
+		.style('fill', '#fff')
+		.style('fill-opacity', 0.3)
+		.attr('stroke', '#fff')
+		.attr('stroke-width', 0); // 1.4
 
 	stop1 = g.append('rect')
 		.attr('x',  -pos_left_x+20 + 10 + 22-6)
