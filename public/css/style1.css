@@ -1,10 +1,8 @@
 body {
 	min-width: 800px;
-	/*max-width: 800px;*/
-	/*max-width: */
-	/*padding-top: 40px;*/
 	padding-bottom: 40px;
-	background-color: #15202D !important;
+	/*background-color: #15202D !important;*/ 
+	background-color: #000 !important;
 	color: #aaa !important;
 }
 

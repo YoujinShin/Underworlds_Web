@@ -25,7 +25,8 @@ function radiusGuide() {
 
 		g.append('text')
 			.attr('class', 'scaleText')
-			.attr('x', x -25)
+			// .attr('x', x -25)
+			.attr('x',-innerRadius - 139)
 			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ))
 			.text(r)
 			.style('opacity', 1)
@@ -35,7 +36,8 @@ function radiusGuide() {
 		g.append('line')
 			.attr('x1', 0 )
 			.attr('y1', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
-			.attr('x2', x - 20)
+			// .attr('x2', x - 20)
+			.attr('x2',-innerRadius - 139)
 			.attr('y2', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) )
 			.text(r)
 			.attr('stroke', '#fff')
@@ -104,8 +106,8 @@ var yScale = d3.scale.linear()
 				// .range([-height*0.18, height*0.25]);
 
 // phylum,class,order,family,genus,value
-var xpos = -1 * pos_left_x +40;
-var xpos2 = -1 * pos_left_x + 110;
+var xpos = -1 * pos_left_x + 36;
+var xpos2 = -1 * pos_left_x + 100;
 
 function texonomyList() {
 
@@ -270,16 +272,16 @@ function changeTaxoName(p, c, o, f, g) {
 	phylum_name.transition().duration(100).style('fill-opacity', 0.9);
 
 	class_name.text(c);
-	class_name.transition().duration(100).style('fill-opacity', 0.82);
+	class_name.transition().duration(100).style('fill-opacity', 0.9);
 
 	order_name.text(o);
-	order_name.transition().duration(100).style('fill-opacity', 0.74);
+	order_name.transition().duration(100).style('fill-opacity', 0.9);
 
 	family_name.text(f);
-	family_name.transition().duration(100).style('fill-opacity', 0.6);
+	family_name.transition().duration(100).style('fill-opacity', 0.9);
 
 	genus_name.text(g);
-	genus_name.transition().duration(100).style('fill-opacity', 0.45);
+	genus_name.transition().duration(100).style('fill-opacity', 0.9);
 }
 
 var clicked = false;
@@ -299,7 +301,7 @@ function makeButton() {
 	//    .style('opacity', 0.5)
 	//    .attr("xlink:href","triangle.png");
 
-	var tx = -pos_left_x+20 + 10 + 25 - 5;
+	var tx = -pos_left_x+20 + 10 + 25 +13;
 	var ty = 160 + 10 + dy - 2;
 
 	play = g.append("polygon")
