@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 var width = 1000,
 // var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = width * 0.67, // 0.66
+	height = width * 0.66, // 0.66
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -20,9 +20,6 @@ svg.append('rect')
 		.attr('width', width + margin.left + margin.right)
 		.attr('height', height + margin.top + margin.bottom)
 		.style('fill', '#15202D');
-
-// var tx = width/2 + margin.left - 40;
-// var ty = height/2 + margin.top;
 
 var tx = width/2 + margin.left - 40;
 var ty = height/2 + margin.top;
@@ -81,7 +78,7 @@ function draw(error, genus, root) {
 					.attr('y1', function(d, i) { return getY1(d.value, i); })
 					.attr('x2', function(d, i) { return getX(d.value, i); })
 					.attr('y2', function(d, i) { return getY(d.value, i); })
-					.style('opacity', 0.2) // 0.18
+					.style('opacity', 0.22) // 0.18
 					.attr('stroke-width', 1)
 					.attr('stroke', '#92A7B4')
 					.on("mouseover", function(d, i) {
@@ -92,17 +89,21 @@ function draw(error, genus, root) {
 						order = i;
 						clicked = true;
 						animation();
+
+						var currentColor = getColor(d.phylum);
 						
 						d3.select(this).attr("stroke-width", 2);
-						d3.select(this).style('opacity', 0.9);
+						d3.select(this).style('opacity', 0.99);
+						d3.select(this).attr("stroke", currentColor);
+						
 
 						selectParents2(d, path);
 						// selectDots(d.genus);
 
-						selectDots2(d.genus, d.family);
+						selectDots2(d.genus, d.family, currentColor);
 						selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
 
-						tooltip.text(d.genus +", " + d.value);
+						// tooltip.text(d.genus +", " + d.value);
 						// tooltip.style("visibility", "visible");
 					})
 					.on("mousemove", function(){
@@ -123,7 +124,7 @@ function draw(error, genus, root) {
 	dots = g.selectAll('.dot')
 					.data(genus)
 				.enter().append('circle')
-					.style('opacity', 0.7)
+					.style('opacity', 0.8)
 					.attr('r', 1.7) //1.6
 					.attr('cx', function(d, i) { return getX(d.value, i); })
 					.attr('cy', function(d, i) { return getY(d.value, i); })
@@ -133,14 +134,17 @@ function draw(error, genus, root) {
 						unselectLine();
 						unselectDots();
 
-						order = i;
+						// order = i;
 						clicked = true;
 						animation();
 
-						d3.select(this).style('opacity', 0.9);
+						var currentColor = getColor(d.phylum);
+
+						d3.select(this).style('fill', currentColor);
+						d3.select(this).style('opacity', 0.99);
 
 						selectParents2(d, path);
-						selectLine(d.genus, d.family);
+						selectLine(d.genus, d.family, currentColor);
 
 						d3.select(this).transition().duration(480).attr('r', 5);
 						selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
@@ -173,9 +177,16 @@ function draw(error, genus, root) {
       .style('stroke', 'rgba(146,167,180,0.2)')
       // .style("stroke", '#15202D') // blue
       .attr("stroke-width", 1.2) // 0.4,  1.1
-      .style("fill",'#92A7B4') // white
+      .style("fill", function(d) {
+
+      	var phylum = getPhylum(d);
+      	return getColor(phylum);
+
+
+      	// return '#92A7B4';
+      }) // white
       // .style("fill", '#15202D') // blue
-      .style("fill-opacity", 0.05) // 0.2
+      .style("fill-opacity", 0.0) // 0.2
       .style("fill-rule", "evenodd")
       .style('visibility', function(d) {
       	if(d.depth == 5) {
@@ -193,9 +204,12 @@ function draw(error, genus, root) {
 
 			d3.select(this).style("fill-opacity", 0.9);
 
+			var currentColor = d3.select(this).style("fill");;
+
 			tooltip.text(d.name);
 			selectParents(d, path);
-			selectChildren(d, dots);
+			selectChildren(d, currentColor);
+			// selectChildren(d, dots);
 			// tooltip.style("visibility", "visible");
 		})
 		.on("mousemove", function(){
@@ -268,11 +282,11 @@ d3.select(self.frameElement).style("height", height + "px");
 
 var valueScale = d3.scale.linear()
 					.domain([0, 1]) // [0, max log value] -> radius
-					.range([276, 475]);
-					// .range([0, 510]);
+					// .range([276, 475]);
+					.range([0+1, 510-1]);
 
-// var order = Math.floor(valueScale(Math.random()) + 1);
-var order = 475;
+var order = Math.floor(valueScale(Math.random()) + 1);
+// var order = 475;
 
 function selectOne() {
 	unselectDots();
@@ -280,12 +294,15 @@ function selectOne() {
 
 	lines.each(function(d, i) {
 		if(i == order) {
+			var currentColor = getColor(d.phylum);
+
+			d3.select(this).attr("stroke", currentColor);
 			d3.select(this).attr("stroke-width", 2);
 			d3.select(this).style('opacity', 0.9);
 
 			selectParents2(d, path);
 
-			selectDots2(d.genus, d.family);
+			selectDots2(d.genus, d.family, currentColor);
 			selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
 		}
 	});

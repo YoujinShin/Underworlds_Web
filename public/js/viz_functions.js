@@ -48,7 +48,7 @@ function selectParents2(d, path) {
 
 var opacScale = d3.scale.linear()
 					.domain([5, 1])  
-					.range([0.4, 0.97]);
+					.range([0.1, 1]);
 
 function selectArc(path, name0, name1, name2, name3, name4, depth) {
 
@@ -92,12 +92,48 @@ function selectArc(path, name0, name1, name2, name3, name4, depth) {
 			d3.select(this).style('stroke', 'rgba(146,167,180,0.2)')
 			// d3.select(this).style("stroke", '#92A7B4');
 			// d3.select(this).style("fill-opacity", 0.05);
-			d3.select(this).style("fill-opacity", 0.05);
+			d3.select(this).style("fill-opacity", 0.0);
 		}
 	});
 }
 
-function selectChildren(d) {
+function selectArc2(path, name0, name1, name2, name3, name4, depth) {
+
+	if(depth == 1) { changeTaxoName(name0, "", "", "", ""); }
+	if(depth == 2) { changeTaxoName(name1, name0, "", "", ""); }
+	if(depth == 3) { changeTaxoName(name2, name1, name0, "", ""); }
+	if(depth == 4) { changeTaxoName(name3, name2, name1, name0, ""); }
+	if(depth == 5) { changeTaxoName(name4, name3, name2, name1, name0); }
+
+	changeSelectedBox(depth);
+
+	svg.selectAll("path").each(function(e) {
+		var e_depth = e.depth;
+		    
+		if(e.name==name0 && e.depth==depth) {
+			d3.select(this).style("stroke", '#15202D');
+			d3.select(this).style("fill-opacity", opacScale(e_depth));
+		} else if(e.name==name1 && e.depth==(depth-1)) {
+			d3.select(this).style("stroke", '#15202D');
+			d3.select(this).style("fill-opacity", opacScale(e_depth));
+		} else if(e.name==name2 && e.depth==(depth-2)) {
+			d3.select(this).style("stroke", '#15202D');
+			d3.select(this).style("fill-opacity", opacScale(e_depth));
+		} else if(e.name==name3 && e.depth==(depth-3)) {
+			d3.select(this).style("stroke", '#15202D');
+			d3.select(this).style("fill-opacity", opacScale(e_depth));
+		} else if(e.name==name4 && e.depth==(depth-4)) {
+			d3.select(this).style("stroke", '#15202D');
+			d3.select(this).style("fill-opacity", opacScale(e_depth));
+		} else {
+			d3.select(this).style('stroke', 'rgba(146,167,180,0.2)')
+			d3.select(this).style("fill-opacity", 0.0);
+		}
+	});
+}
+
+function selectChildren(d, c) {
+	// console.log(c);
 
 	var depth = d.depth;
 	unselectDots();
@@ -106,20 +142,20 @@ function selectChildren(d) {
 	if(depth == 5) {
 		
 		// selectDots(d.name);
-		selectLine(d.name, d.parent.name);
-		selectDots2(d.name, d.parent.name);
+		selectLine(d.name, d.parent.name, c);
+		selectDots2(d.name, d.parent.name, c);
 	} else if(depth == 4) {
 
 		d.children.forEach(function(e) {
 			// selectDots(e.name);
-			selectDots2(e.name, e.parent.name);
+			selectDots2(e.name, e.parent.name, c);
 		});
 	} else if(depth == 3) {
 
 		d.children.forEach(function(e1) {
 			e1.children.forEach(function(e2) {
 				// selectDots(e2.name);
-				selectDots2(e2.name, e2.parent.name);
+				selectDots2(e2.name, e2.parent.name, c);
 			});
 		});
 	} else if(depth == 2) {
@@ -128,7 +164,7 @@ function selectChildren(d) {
 			e1.children.forEach(function(e2) {
 				e2.children.forEach(function(e3) {
 					// selectDots(e3.name);
-					selectDots2(e3.name, e3.parent.name);
+					selectDots2(e3.name, e3.parent.name, c);
 				});
 			});
 		});
@@ -139,7 +175,7 @@ function selectChildren(d) {
 				e2.children.forEach(function(e3) {
 					e3.children.forEach(function(e4) {
 						// selectDots(e4.name);
-						selectDots2(e4.name, e4.parent.name);
+						selectDots2(e4.name, e4.parent.name, c);
 					});
 				});
 			});
@@ -157,9 +193,10 @@ function selectDots(name) {
 	});
 }
 
-function selectDots2(genus, family) {
+function selectDots2(genus, family, c) {
 	dots.each(function(e) {
 		if((e.genus == genus) && (e.family == family)) {
+			d3.select(this).style('fill', c);
 			d3.select(this).transition().duration(480).attr('r', 5);
 		}
 	});
@@ -174,15 +211,16 @@ function unselectArc(path) {
 
 function unselectDots() {
 	dots.each(function(e) {
+		d3.select(this).style("fill", "#92A7B4");
 		d3.select(this).transition().duration(230).attr('r', 1.7);
 	});
 }
 
-function selectLine(genus, family) {
+function selectLine(genus, family, c) {
 
 	lines.each(function(e) {
 		if((e.genus == genus) && (e.family == family)) {
-			// d3.select(this).attr('r', 5);
+			d3.select(this).attr('stroke', c);
 			d3.select(this).attr("stroke-width", 2);
 			d3.select(this).style('opacity', 0.9);
 		}
@@ -191,6 +229,8 @@ function selectLine(genus, family) {
 
 function unselectLine() {
 	lines.each(function(e) {
+		
+		d3.select(this).attr("stroke", "#92A7B4");
 		d3.select(this).attr("stroke-width", 1);
 		d3.select(this).style('opacity', 0.22);
 	});

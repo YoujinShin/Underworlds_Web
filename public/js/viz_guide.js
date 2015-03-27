@@ -287,55 +287,57 @@ var myVar;
 
 function makeButton() {
 
-	var dy = 10;
+	var dy = -10;
+	var w = 50;
+	var h = w * 0.6;
 
 	play = g.append("image")
-	   .attr('x',-pos_left_x+20 + 10 + 25)
-	   .attr('y',160 + 10 + dy)
-	   .attr('width', 16)
-	   .attr('height', 16)
-	   .style('opacity', 0.6)
+	   .attr('x',-pos_left_x+20 + 10 + 25 - 5)
+	   .attr('y',160 + 10 + dy - 2)
+	   .attr('width', h*0.5)
+	   .attr('height', h*0.5)
+	   .style('opacity', 0.5)
 	   .attr("xlink:href","triangle.png");
 
 	stop1 = g.append('rect')
-		.attr('x',  -pos_left_x+20 + 10 + 22)
-		.attr('y', 160 + 10+ dy)
-		.attr('width', 6)
-		.attr('height', 16)
+		.attr('x',  -pos_left_x+20 + 10 + 22-6)
+		.attr('y', 160 + 10+ dy - 2)
+		.attr('width', 5)
+		.attr('height', h*0.46)
 		.style('fill', '#fff')
-		.style('fill-opacity', 0.0)
+		.style('fill-opacity', 0.3)
 		.attr('stroke', '#fff')
-		.style('opacity', 0.5)
+		// .style('opacity', 0.40)
 		.style('visibility', 'hidden')
-		.attr('stroke-width', 1.0);
+		.attr('stroke-width', 0); // 1.4
 
 	stop2 = g.append('rect')
-		.attr('x',  -pos_left_x+20 + 10 + 22 + 15)
-		.attr('y', 160 + 10+ dy)
-		.attr('width', 6)
-		.attr('height', 16)
+		.attr('x',  -pos_left_x+20 + 10 + 22 + 15-7)
+		.attr('y', 160 + 10+ dy-2)
+		.attr('width', 5)
+		.attr('height', h*0.46)
 		.style('fill', '#fff')
-		.style('fill-opacity', 0.0)
+		.style('fill-opacity', 0.3)
 		.attr('stroke', '#fff')
-		.style('opacity', 0.5)
+		// .style('opacity', 0.40)
 		.style('visibility', 'hidden')
-		.attr('stroke-width', 1.0);
+		.attr('stroke-width', 0);
 
 	button = g.append('rect')
 		.attr('x',  -pos_left_x+20 + 10)
 		.attr('y', 160+ dy)
 		// .attr('y', outerRadius - 60)
-		.attr('width', 64)
-		.attr('height', 36)
+		.attr('width', w) // 64
+		.attr('height', h) // 36
 		.style('fill', '#fff')
 		.style('fill-opacity', 0.05)
 		.attr('stroke', '#fff')
 		.attr('stroke-width', 0)
 		.on("mouseover", function() {
-			d3.select(this).transition().duration(180).style('fill-opacity', 0.12);
+			d3.select(this).transition().duration(180).style('fill-opacity', 0.08);
 		})
 		.on("mouseout", function() {
-			d3.select(this).transition().duration(180).style('fill-opacity', 0.05);
+			d3.select(this).transition().duration(180).style('fill-opacity', 0.04);
 		})
 		.on('click', function() {
 
@@ -359,7 +361,6 @@ function animation() {
 
 			if(clicked) {
 				myVar = setInterval(function(){
-					console.log('Hello');
 
 					order--;
 					if(order > 510) {
