@@ -45,10 +45,10 @@ function getColor(phylum) {
 	else if(phylum == 'Thermotogae') { order2 = 2; }
 	else if(phylum == 'Verrucomicrobia') { order2 = 3; }
 
-	var colorLists = ['#F44336', '#E91E63', '#9C27B0'
-						,'#3F51B5', '#2196F3', '#009688', '#4CAF50'
-						, '#FF5722' ];
+	var colorLists = ['#F44336', '#E91E63', '#9C27B0', '#3F51B5', '#2196F3', '#009688', '#4CAF50', '#FF5722' ];
 
-	return colorLists[ order2 ];
+	var colorLists2 = ['#f8877f','#f06493', '#c34cd7', '#7280ce', '#6ab8f7', '#00e3cd', '#80c883', '#ff916f'];
+
+	return colorLists2[ order2 ];
 }
 
