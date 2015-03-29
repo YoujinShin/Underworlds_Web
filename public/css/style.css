@@ -19,6 +19,8 @@ body {
 	padding-left: 12px;
 	color: rgba(255,255,255,0.8);
 	/*font-weight: 600;*/
+
+	text-decoration: none;
 }
 
 p {
@@ -174,6 +176,10 @@ h3 {
 .position {
 	/*color: rgba(190,190,190,1) !important;*/
 	opacity: 0.5 !important;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 #logo {
