@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" href="logo.png" />
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+
 	<link href="/css/viz.css" rel="stylesheet">
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -13,12 +13,32 @@
 
 <body>
 	<h2 id="name">
-		<div id="header" class="container" style="height:60px !important">
-			<a href="/" style="text-decoration: none; color: rgba(255,255,255,0.95)">
+		<div class="container" style="height:20px !important">
+
+			<div class="row">
+	            <div id="header" class="col-sm-4" style="text-align:left;">  
+	            	<span style="font-weight: 600">UNDER</span><span style="font-weight: 300">WORLDS</span>
+	            </div>
+	            <div class="col-sm-8 tab" style="text-align:right;">  
+					<a id="about_tab"  href="#about" style="text-decoration: none; color:rgba(255,255,255,0.8); padding-right: 50px ">ABOUT</a>
+					<a id="team_tab"href="#team" style="text-decoration: none; color:rgba(255,255,255,0.8); ">TEAM</a>
+				</div>
+			</div>
+
+<!-- 
+			<a id="header"  href="/" style="text-decoration: none; color: rgba(255,255,255,0.96)">
 				<span style="font-weight: 600">UNDER</span><span style="font-weight: 300">WORLDS</span>
 			</a>
-		</div>
+
+			<div class="tab" >
+				<a  id="about_tab"  href="#about" style="text-decoration: none; color: ">ABOUT</a>
+				<a id="team_tab"href="#team" style="text-decoration: none; right: 14% !important">TEAM</a>
+			</div> -->
+
+			<!-- <hr style="margin-top: 10px; margin-bottom: 10px;"> -->
+		</div>		
 	</h2>
+
 
 	<!-- viz -->	
 	<div id='viz'></div>
@@ -222,7 +242,6 @@
 		
 
 			<div class="row" style="margin:0px; margin-top: 10px;">
-				<!-- <hr style="opacity: 0.4 !important; "> -->
 				<br><br><br><br>
 				<div class="col-xs-6">
 					<img id="logo" src="mit-logo.png">
@@ -252,5 +271,28 @@
 	<script src="/js/viz_color.js"></script> 
 	<script src="/js/viz_functions.js"></script> 
 	<script src="/js/viz_guide.js"></script> 
+	<script src="/js/main.js"></script> 
+
+
+	<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		  	clicked = true;
+			animation();
+
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 800);
+		        return false;
+		      }
+		    }
+		  });
+		});
+	</script>
 </body>
 </html>

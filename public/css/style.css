@@ -2,7 +2,6 @@ body {
 	min-width: 1200px;
 	padding-bottom: 40px;
 	background-color: #15202D !important;
-	/*background-color: #000 !important;*/
 	color: #bbb !important;
 	font-size: 12px !important;
 }
@@ -15,12 +14,7 @@ body {
 	background-color: rgba(255,255,255,0.062);
 	padding: 10px;
 	padding-left: 12px;
-/*	padding-top: 6px;
-	padding-bottom: 6px;*/
-	/*padding-left: 12px;*/
 	color: rgba(255,255,255,0.8);
-	/*font-weight: 600;*/
-
 	text-decoration: none;
 }
 
@@ -38,18 +32,12 @@ h3 {
 #about {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
-
-	/*padding-left: 8%;
-	padding-right: 8%;
-	background-color: #15202D;*/
 }
 
 #diagram {
 	position: relative;
 	width: 82%;
 	left: 9%;
-	/*margin-left: auto;
-    margin-right: auto;*/
 }
 
 .title {
@@ -60,8 +48,6 @@ h3 {
 }
 
 #footer {
-	/*background-color: rgba(255,255,255,0.05);*/
-	/*padding-top: 50px;*/
 	padding-bottom: 0px;
 	text-align: right;
 	font-family: 'Open Sans', sans-serif;
@@ -82,10 +68,29 @@ h3 {
 	/*padding-top: 34px;*/
 }
 
+.tab {
+
+	position: relative;
+	/*color: white;*/
+	/*right: 0px !important;*/
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	letter-spacing: 2px;
+	/*top: 25px;*/
+	padding-top: 3px;
+	color: rgba(255,255,255,0.8);
+	text-align: right;
+	padding-left: 100px;
+	padding-bottom: -20px;
+	/*text-decoration: none;*/
+}
+
 #header {
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 3px;
 	font-size: 20px;
+	left: 0px !important;
 	/*padding-left: 30px;*/
 	color: rgba(255,255,255,1);
 }
@@ -161,10 +166,7 @@ h3 {
 }
 
 .boxed-grey {
-	/*height: 200px !important;*/
-	/*padding: 14px !important;*/
 	padding: 0px !important;
-	/*padding-left: 0px !important;*/
 }
 
 .department {
@@ -172,13 +174,9 @@ h3 {
 	color: #aaa !important;
 	opacity: 0.5 !important;
 	position: relative;
-	/*top: -15px !important;*/
-
-	/*text-transform: uppercase !important;*/
 }
 
 .position {
-	/*color: rgba(190,190,190,1) !important;*/
 	opacity: 0.5 !important;
 }
 
@@ -190,7 +188,6 @@ a:hover {
 	position: relative;
 	width: 200px;
 	opacity: 0.7;
-	/*bottom: 30px;*/
 }
 
 .box {
