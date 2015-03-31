@@ -48,7 +48,7 @@ function ready(error, viruses) {
 				.attr('y1', function() { return yScale(0); })
 				.attr('x2', function(d,i) { return xScale(i); })
 				.attr('y2', function(d,i) {  return yScale( getLogValue(d.Count)); })
-				.attr('stroke', 'rgba(255,255,255,0.6)')
+				.attr('stroke', 'rgba(255,255,255,0.3)')
 				.attr('stroke-width', 1.3)
 			.on('mouseover', function(d) {
 				tooltip.text(d.Virus_name + ': ' + d.Count);
@@ -67,7 +67,7 @@ function ready(error, viruses) {
 			.append('circle')
 				.attr('cx', function(d,i) { return xScale(i); })
 				.attr('cy', function(d,i) {  return yScale( getLogValue(d.Count)); })
-				.attr('r', 6)
+				.attr('r', 4)
 				.attr('stroke', '#fff')
 				.attr('stroke-width', 0)
 				.style('fill', 'rgba(255,255,255,0.6)')
