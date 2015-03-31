@@ -20,3 +20,9 @@ exports.viz1 = function(req, res) {
 	res.render('viz1.html');
 	// res.render('main.html');
 }
+
+exports.virus = function(req, res) {
+	console.log('virus page requested');
+	res.render('virus.html');
+	// res.render('main.html');
+}

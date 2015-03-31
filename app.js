@@ -74,6 +74,7 @@ var routes = require('./routes/index.js');
 
 app.get('/', routes.index);
 app.get('/viz1', routes.viz1);
+app.get('/virus', routes.virus);
 
 // //new astronaut routes
 // app.get('/create',routes.astroForm); //display form
