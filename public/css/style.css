@@ -194,3 +194,11 @@ a:hover {
 	padding: 10px;
 	padding-left: 12px;
 }
+
+#about_tab:hover {
+	text-decoration: underline;
+}
+
+#team_tab:hover {
+	text-decoration: underline;
+}
