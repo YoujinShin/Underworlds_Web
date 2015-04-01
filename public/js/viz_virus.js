@@ -2,7 +2,7 @@ var margin2 = { top: 20, right: 30, bottom: 20, left: 30 };
 
 var width2 = 1000,
 	width2 = width2 - margin2.left - margin2.right,
-	height2 = width2 * 0.3,
+	height2 = width2 * 0.4,
 	height2 = height2 - margin2.top - margin2.bottom;
 
 var svg2 = d3.select('#viz_virus').append('svg')
@@ -29,7 +29,7 @@ var xScale = d3.scale.linear()
 
 var yScale = d3.scale.linear()
 	.domain([0, getLogValue(23816)])
-	.range([height2 - 10, 10]);
+	.range([height2 - 100, 20]);
 
 queue()
 	.defer(d3.csv, 'viruses.csv')
@@ -86,7 +86,7 @@ function ready(error, viruses) {
 				tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
-				d3.select(this).transition().duration(480).attr('r', 5);
+				d3.select(this).transition().duration(0).attr('r', 5);
 				d3.select(this).style('opacity', 0.99);
 			})
 			.on('mousemove', function() {
