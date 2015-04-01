@@ -183,7 +183,6 @@ function draw(error, genus, root) {
       	var phylum = getPhylum(d);
       	return getColor(phylum);
 
-
       	// return '#92A7B4';
       }) // white
       // .style("fill", '#15202D') // blue
@@ -307,5 +306,4 @@ function selectOne() {
 			selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
 		}
 	});
-
 }

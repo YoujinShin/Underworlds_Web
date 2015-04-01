@@ -51,4 +51,3 @@ function getColor(phylum) {
 
 	return colorLists2[ order2 ];
 }
-
