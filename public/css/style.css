@@ -4,6 +4,7 @@ body {
 	background-color: #15202D !important;
 	color: #bbb !important;
 	font-size: 12px !important;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #labname {
@@ -190,15 +191,39 @@ a:hover {
 	opacity: 0.7;
 }
 
+#logo:hover {
+	opacity: 0.9;
+}
+
 .box {
 	padding: 10px;
 	padding-left: 12px;
 }
 
+#about_tab {
+	margin-right: 45px;
+	padding: 16px;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+#team_tab {
+	/*margin-right: 70px;*/
+	padding: 16px;
+	font-size: 13px;
+	text-decoration: none;
+}
+
 #about_tab:hover {
-	text-decoration: underline;
+	background-color: rgba(255,255,255,0.06);
+	text-decoration: none;
+
+	/*text-decoration: underline;*/
 }
 
 #team_tab:hover {
-	text-decoration: underline;
+	background-color: rgba(255,255,255,0.06);
+	text-decoration: none;
+
+	/*text-decoration: underline;*/
 }
