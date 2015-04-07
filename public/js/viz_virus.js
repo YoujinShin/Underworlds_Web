@@ -1,6 +1,6 @@
 var margin2 = { top: 20, right: 30, bottom: 20, left: 0 };
 
-var width2 = 1000,
+var width2 = 1020,
 	width2 = width2 - margin2.left - margin2.right,
 	height2 = width2 * 0.4,
 	height2 = height2 - margin2.top - margin2.bottom;
