@@ -55,7 +55,8 @@ function ready(error, viruses) {
 				.style('opacity', 0.22)
 				.attr('stroke-width', 1)
 			.on('mouseover', function(d) {
-				tooltip.text(d.Virus_name + ': ' + d.Count);
+				tooltip.text(d.Virus_name);
+				// tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
 				d3.select(this).attr("stroke-width", 2);
@@ -77,7 +78,7 @@ function ready(error, viruses) {
 			.append('circle')
 				.attr('cx', function(d,i) { return xScale(i); })
 				.attr('cy', function(d,i) {  return yScale( getLogValue(d.Count)); })
-				.attr('r', 3)
+				.attr('r', 2.4)
 				.attr('stroke', '#92A7B4')
 				.attr('stroke-width', 0)
 				// .style('fill', '#92A7B4')
@@ -86,7 +87,8 @@ function ready(error, viruses) {
 				})
 				.style('fill-opacity', 0.85)
 			.on('mouseover', function(d) {
-				tooltip.text(d.Virus_name + ': ' + d.Count);
+				tooltip.text(d.Virus_name);
+				// tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
 				d3.select(this).transition().duration(0).attr('r', 5);
@@ -98,7 +100,7 @@ function ready(error, viruses) {
 			.on('mouseout', function(d) {
 				tooltip.style('visibility', 'hidden');
 				d3.select(this).style('opacity', 0.8);
-				d3.select(this).attr('r', 3);
+				d3.select(this).attr('r', 2.4);
 			});
 }
 
@@ -120,6 +122,8 @@ function updateByCount() {
 
 	dots.transition().duration(430)
 		.attr('cx', function(d) { return xScale(d.Order); });
+
+	updateGuideHost_count();
 }
 
 function updateByHost() {
@@ -130,6 +134,8 @@ function updateByHost() {
 
 	dots.transition().duration(430)
 		.attr('cx', function(d, i) { return xScale(i); });
+
+	updateGuideHost_host();
 }
 
 function getLogValue(d) {
@@ -172,6 +178,62 @@ function getGuideVirus() {
 			.attr('stroke-width', 1)
 			.style("text-anchor", "end");
 	}
+}
+
+function updateGuideHost_count() {
+
+	var gap = ( xScale(70) - xScale(0) )/4;
+
+	line_bacteria.transition().duration(430)
+		.attr('x2', xScale(0) + 10);
+
+	line_animal.transition().duration(430)
+		.attr('x1', xScale(0) + gap )
+		.attr('x2', xScale(0) + gap + 10);
+
+	line_plant.transition().duration(430)
+		.attr('x1', xScale(0) + gap*2 )
+		.attr('x2', xScale(0) + gap*2 + 10);
+
+	line_unknown.transition().duration(430)
+		.attr('x1', xScale(0) + gap*3 )
+		.attr('x2', xScale(0) + gap*3 + 10);
+
+	text_animal.transition().duration(430)
+		.attr('x', xScale(0) + gap );
+
+	text_plant.transition().duration(430)
+		.attr('x', xScale(0) + gap*2 );
+
+	text_unknown.transition().duration(430)
+		.attr('x', xScale(0) + gap*3 );
+}
+
+function updateGuideHost_host() {
+
+	line_bacteria.transition().duration(430)
+		.attr('x2', xScale(35));
+
+	line_animal.transition().duration(430)
+		.attr('x1', xScale(36))
+		.attr('x2', xScale(64));
+
+	line_plant.transition().duration(430)
+		.attr('x1', xScale(65))
+		.attr('x2', xScale(67));
+
+	line_unknown.transition().duration(430)
+		.attr('x1', xScale(68))
+		.attr('x2', xScale(70));
+
+	text_animal.transition().duration(430)
+		.attr('x', xScale(36));
+
+	text_plant.transition().duration(430)
+		.attr('x', xScale(65));
+
+	text_unknown.transition().duration(430)
+		.attr('x', xScale(68));
 }
 
 function getGuideHost() {
