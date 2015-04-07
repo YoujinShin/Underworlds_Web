@@ -1,4 +1,4 @@
-var margin2 = { top: 20, right: 30, bottom: 20, left: 0 };
+var margin2 = { top: 40, right: 30, bottom: 20, left: 0 };
 
 var width2 = 1020,
 	width2 = width2 - margin2.left - margin2.right,
@@ -25,7 +25,7 @@ var g2 = svg2.append('g')
 
 var xScale2 = d3.scale.linear()
 	.domain([0, 70])
-	.range([50, width2 - 40]);
+	.range([50, width2 - 100]);
 
 var yScale2 = d3.scale.linear()
 	.domain([getLogValue(1), getLogValue(23816)])
@@ -117,7 +117,7 @@ d3.select(".host")
 	.on("click", function(){
 		clicked = true;
 		animation();
-		
+
 		updateByHost();
 	});
 
@@ -310,5 +310,21 @@ function getGuideHost() {
 			.text('Unknown')
 			.style('fill', '#F8877F')
 			.style("text-anchor", "start");
+
+	text_host = g2.append('text')
+			.attr('class', 'virusHost')
+			.attr('x', xScale2(70) + 40)
+			.attr('y', yScale2(0) + 50)
+			.text('(Host)')
+			.style('fill', '#fff')
+			.style("text-anchor", "start");
+
+	text_count = g2.append('text')
+			.attr('class', 'virusHost')
+			.attr('x', xScale2(0) - 10)
+			.attr('y', yScale2(getLogValue(23816)) - 60)
+			.text('(Count)')
+			.style('fill', '#fff')
+			.style("text-anchor", "end");
 
 }
