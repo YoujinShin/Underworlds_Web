@@ -1,4 +1,4 @@
-var margin2 = { top: 20, right: 30, bottom: 20, left: 30 };
+var margin2 = { top: 20, right: 30, bottom: 20, left: 0 };
 
 var width2 = 1000,
 	width2 = width2 - margin2.left - margin2.right,
@@ -19,15 +19,15 @@ svg2.append('rect')
 var g2 = svg2.append('g')
 	.attr('transform', 'translate('+ margin2.left +','+ margin2.top +')');
 
-var tooltip = d3.select('body')
-				.append('div')
-				.attr('id', 'tooltip');
+// var tooltip = d3.select('body')
+// 				.append('div')
+// 				.attr('id', 'tooltip');
 
-var xScale = d3.scale.linear()
+var xScale2 = d3.scale.linear()
 	.domain([0, 70])
-	.range([80, width2 - 30]);
+	.range([50, width2 - 40]);
 
-var yScale = d3.scale.linear()
+var yScale2 = d3.scale.linear()
 	.domain([getLogValue(1), getLogValue(23816)])
 	.range([height2 - 100, 60]);
 
@@ -40,14 +40,14 @@ function ready(error, viruses) {
 	getGuideVirus();
 	getGuideHost();
 
-	lines = g2.selectAll('.line')
+	lines_virus = g2.selectAll('.line')
 			.data(viruses)
 				.enter()
 			.append('line')
-				.attr('x1', function(d,i) { return xScale(i); })
-				.attr('y1', function() { return yScale(0); })
-				.attr('x2', function(d,i) { return xScale(i); })
-				.attr('y2', function(d,i) {  return yScale( getLogValue(d.Count)); })
+				.attr('x1', function(d,i) { return xScale2(i); })
+				.attr('y1', function() { return yScale2(0); })
+				.attr('x2', function(d,i) { return xScale2(i); })
+				.attr('y2', function(d,i) {  return yScale2( getLogValue(d.Count)); })
 				// .attr('stroke', '#92A7B4')
 				.attr('stroke', function(d) {
 					return getColorVirus(d.Host_type);
@@ -72,12 +72,12 @@ function ready(error, viruses) {
 				d3.select(this).style('opacity', 0.22);
 			});
 
-	dots = g2.selectAll('.dot')
+	dots_virus = g2.selectAll('.dot')
 			.data(viruses)
 				.enter()
 			.append('circle')
-				.attr('cx', function(d,i) { return xScale(i); })
-				.attr('cy', function(d,i) {  return yScale( getLogValue(d.Count)); })
+				.attr('cx', function(d,i) { return xScale2(i); })
+				.attr('cy', function(d,i) {  return yScale2( getLogValue(d.Count)); })
 				.attr('r', 2.4)
 				.attr('stroke', '#92A7B4')
 				.attr('stroke-width', 0)
@@ -116,24 +116,24 @@ d3.select(".host")
 
 function updateByCount() {
 
-	lines.transition().duration(430)
-		.attr('x1', function(d) { return xScale(d.Order); })
-		.attr('x2', function(d) { return xScale(d.Order); });
+	lines_virus.transition().duration(430)
+		.attr('x1', function(d) { return xScale2(d.Order); })
+		.attr('x2', function(d) { return xScale2(d.Order); });
 
-	dots.transition().duration(430)
-		.attr('cx', function(d) { return xScale(d.Order); });
+	dots_virus.transition().duration(430)
+		.attr('cx', function(d) { return xScale2(d.Order); });
 
 	updateGuideHost_count();
 }
 
 function updateByHost() {
 
-	lines.transition().duration(430)
-		.attr('x1', function(d, i) { return xScale(i); })
-		.attr('x2', function(d, i) { return xScale(i); });
+	lines_virus.transition().duration(430)
+		.attr('x1', function(d, i) { return xScale2(i); })
+		.attr('x2', function(d, i) { return xScale2(i); });
 
-	dots.transition().duration(430)
-		.attr('cx', function(d, i) { return xScale(i); });
+	dots_virus.transition().duration(430)
+		.attr('cx', function(d, i) { return xScale2(i); });
 
 	updateGuideHost_host();
 }
@@ -161,18 +161,18 @@ function getGuideVirus() {
 		var r = lineValues[i];
 
 		g2.append('line')
-			.attr('x1', xScale(0) )
-			.attr('y1', yScale( getLogValue(r) ) )
-			.attr('x2', xScale(70) )
-			.attr('y2', yScale( getLogValue(r) ) )
+			.attr('x1', xScale2(0) )
+			.attr('y1', yScale2( getLogValue(r) ) )
+			.attr('x2', xScale2(70) )
+			.attr('y2', yScale2( getLogValue(r) ) )
 			.attr('stroke', '#92A7B4')
 			.attr('stroke-width', 0.5)
 			.style("stroke-dasharray", ("1,4"));
 
 		g2.append('text')
 			.attr('class', 'scaleText')
-			.attr('x',xScale(0) - 10)
-			.attr('y', yScale( getLogValue(r) ) )
+			.attr('x',xScale2(0) - 10)
+			.attr('y', yScale2( getLogValue(r) ) )
 			.text(r)
 			.style('opacity', 1)
 			.attr('stroke-width', 1)
@@ -182,124 +182,124 @@ function getGuideVirus() {
 
 function updateGuideHost_count() {
 
-	var gap = ( xScale(70) - xScale(0) )/4;
+	var gap = ( xScale2(70) - xScale2(0) )/4;
 
 	line_bacteria.transition().duration(430)
-		.attr('x2', xScale(0) + 10);
+		.attr('x2', xScale2(0) + 10);
 
 	line_animal.transition().duration(430)
-		.attr('x1', xScale(0) + gap )
-		.attr('x2', xScale(0) + gap + 10);
+		.attr('x1', xScale2(0) + gap )
+		.attr('x2', xScale2(0) + gap + 10);
 
 	line_plant.transition().duration(430)
-		.attr('x1', xScale(0) + gap*2 )
-		.attr('x2', xScale(0) + gap*2 + 10);
+		.attr('x1', xScale2(0) + gap*2 )
+		.attr('x2', xScale2(0) + gap*2 + 10);
 
 	line_unknown.transition().duration(430)
-		.attr('x1', xScale(0) + gap*3 )
-		.attr('x2', xScale(0) + gap*3 + 10);
+		.attr('x1', xScale2(0) + gap*3 )
+		.attr('x2', xScale2(0) + gap*3 + 10);
 
 	text_animal.transition().duration(430)
-		.attr('x', xScale(0) + gap );
+		.attr('x', xScale2(0) + gap );
 
 	text_plant.transition().duration(430)
-		.attr('x', xScale(0) + gap*2 );
+		.attr('x', xScale2(0) + gap*2 );
 
 	text_unknown.transition().duration(430)
-		.attr('x', xScale(0) + gap*3 );
+		.attr('x', xScale2(0) + gap*3 );
 }
 
 function updateGuideHost_host() {
 
 	line_bacteria.transition().duration(430)
-		.attr('x2', xScale(35));
+		.attr('x2', xScale2(35));
 
 	line_animal.transition().duration(430)
-		.attr('x1', xScale(36))
-		.attr('x2', xScale(64));
+		.attr('x1', xScale2(36))
+		.attr('x2', xScale2(64));
 
 	line_plant.transition().duration(430)
-		.attr('x1', xScale(65))
-		.attr('x2', xScale(67));
+		.attr('x1', xScale2(65))
+		.attr('x2', xScale2(67));
 
 	line_unknown.transition().duration(430)
-		.attr('x1', xScale(68))
-		.attr('x2', xScale(70));
+		.attr('x1', xScale2(68))
+		.attr('x2', xScale2(70));
 
 	text_animal.transition().duration(430)
-		.attr('x', xScale(36));
+		.attr('x', xScale2(36));
 
 	text_plant.transition().duration(430)
-		.attr('x', xScale(65));
+		.attr('x', xScale2(65));
 
 	text_unknown.transition().duration(430)
-		.attr('x', xScale(68));
+		.attr('x', xScale2(68));
 }
 
 function getGuideHost() {
 
 	// line
 	line_bacteria = g2.append('line')
-			.attr('x1', xScale(0))
-			.attr('x2', xScale(35))
-			.attr('y1', yScale(0) + 30)
-			.attr('y2', yScale(0) + 30)
+			.attr('x1', xScale2(0))
+			.attr('x2', xScale2(35))
+			.attr('y1', yScale2(0) + 30)
+			.attr('y2', yScale2(0) + 30)
 			.attr('stroke', 'rgba(255,255,255,0.86)')
 			.attr('stroke-width', 1.2);
 
 	line_animal = g2.append('line')
-			.attr('x1', xScale(36))
-			.attr('x2', xScale(64))
-			.attr('y1', yScale(0) + 30)
-			.attr('y2', yScale(0) + 30)
+			.attr('x1', xScale2(36))
+			.attr('x2', xScale2(64))
+			.attr('y1', yScale2(0) + 30)
+			.attr('y2', yScale2(0) + 30)
 			.attr('stroke', '#6ab8f7')
 			.attr('stroke-width', 1.2);
 
 	line_plant = g2.append('line')
-			.attr('x1', xScale(65))
-			.attr('x2', xScale(67))
-			.attr('y1', yScale(0) + 30)
-			.attr('y2', yScale(0) + 30)
+			.attr('x1', xScale2(65))
+			.attr('x2', xScale2(67))
+			.attr('y1', yScale2(0) + 30)
+			.attr('y2', yScale2(0) + 30)
 			.attr('stroke', '#00E3CD')
 			.attr('stroke-width', 1.2);
 
 	line_unknown = g2.append('line')
-			.attr('x1', xScale(68))
-			.attr('x2', xScale(70))
-			.attr('y1', yScale(0) + 30)
-			.attr('y2', yScale(0) + 30)
+			.attr('x1', xScale2(68))
+			.attr('x2', xScale2(70))
+			.attr('y1', yScale2(0) + 30)
+			.attr('y2', yScale2(0) + 30)
 			.attr('stroke', '#F8877F')
 			.attr('stroke-width', 1.2);
 
 	// text
 	text_bacteria = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale(0))
-			.attr('y', yScale(0) + 50)
+			.attr('x', xScale2(0))
+			.attr('y', yScale2(0) + 50)
 			.text('Bacteria')
 			.style('fill', 'rgba(255,255,255,0.86)')
 			.style("text-anchor", "start");
 
 	text_animal = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale(36))
-			.attr('y', yScale(0) + 50)
+			.attr('x', xScale2(36))
+			.attr('y', yScale2(0) + 50)
 			.text('Animal')
 			.style('fill', '#6ab8f7')
 			.style("text-anchor", "start");
 
 	text_plant = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale(65))
-			.attr('y', yScale(0) + 50)
+			.attr('x', xScale2(65))
+			.attr('y', yScale2(0) + 50)
 			.text('Plant')
 			.style('fill', '#00E3CD')
 			.style("text-anchor", "start");
 
 	text_unknown = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale(68))
-			.attr('y', yScale(0) + 50)
+			.attr('x', xScale2(68))
+			.attr('y', yScale2(0) + 50)
 			.text('Unknown')
 			.style('fill', '#F8877F')
 			.style("text-anchor", "start");

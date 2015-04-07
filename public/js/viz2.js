@@ -3,7 +3,7 @@ var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 var width = 1000,
 // var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
-	height = width * 0.665, // 0.66
+	height = width * 0.65, // 0.66
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
