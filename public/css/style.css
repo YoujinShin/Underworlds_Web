@@ -15,7 +15,7 @@ body {
 	background-color: rgba(255,255,255,0.062);
 	padding: 10px;
 	padding-left: 12px;
-	color: rgba(255,255,255,0.8);
+	color: rgba(255,255,255,0.85);
 	text-decoration: none;
 }
 
@@ -180,7 +180,7 @@ h3 {
 .department {
 	font-size: 12px !important;
 	color: #aaa !important;
-	opacity: 0.5 !important;
+	opacity: 0.7 !important;
 	position: relative;
 }
 
