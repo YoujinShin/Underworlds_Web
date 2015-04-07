@@ -45,7 +45,7 @@ h3 {
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 2px;
 	color: rgba(255,255,255,0.9);
-	font-size: 26px;
+	font-size: 30px;
 	line-height: 150%;
 	font-weight: 300;
 }
@@ -59,7 +59,8 @@ h3 {
 }
 
 #name {
-	background-color: rgba(255,255,255,0.0);
+	/*background-color: rgba(255,255,255,0.0);*/
+	background-color: rgba(21,32,45,0.9);
 	position: relative;
 	width: 100%;
 	margin: 0px;
@@ -67,7 +68,11 @@ h3 {
 	top: 30px;
 	padding: 20px;
 	padding-left: 20px;
-	padding-bottom: 2px;
+	/*padding-bottom: 10px !important;*/
+
+	z-index: 40;
+
+	/*position: fixed;*/
 	/*padding-top: 34px;*/
 }
 
@@ -203,7 +208,7 @@ a:hover {
 }
 
 #about_tab {
-	margin-right: 45px;
+	margin-right: 30px;
 	padding: 14px;
 	font-size: 13px;
 	text-decoration: none;
@@ -211,6 +216,15 @@ a:hover {
 
 #team_tab {
 	/*margin-right: 70px;*/
+	/*margin-right: 0px;*/
+	padding: 14px;
+	padding-right: 0px;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+#contact_tab {
+	/*margin-right: 45px;*/
 	padding: 14px;
 	font-size: 13px;
 	text-decoration: none;
@@ -230,4 +244,16 @@ a:hover {
 	opacity: 0.6;
 
 	/*text-decoration: underline;*/
+}
+
+#contact_tab:hover {
+	/*background-color: rgba(255,255,255,0.06);*/
+	text-decoration: none;
+	opacity: 0.6;
+
+	/*text-decoration: underline;*/
+}
+
+.bg-gray {
+
 }
