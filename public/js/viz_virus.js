@@ -106,11 +106,18 @@ function ready(error, viruses) {
 
 d3.select(".count")
 	.on("click", function(){
+		clicked = true;
+		animation();
+
 		updateByCount();
+		
 	});
 
 d3.select(".host")
 	.on("click", function(){
+		clicked = true;
+		animation();
+		
 		updateByHost();
 	});
 

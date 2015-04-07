@@ -29,7 +29,7 @@ var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
 var innerRadius = height*0.3;
-var outerRadius = height*0.475; // 0.48
+var outerRadius = height*0.476; // 0.48
 
 var linearScale = d3.scale.linear()
 					.domain([0, 4.524]) // [0, max log value] -> radius
@@ -47,7 +47,8 @@ queue()
 
 var radius = Math.min(width, height) / 2,
 	// radius = innerRadius * 1.092, // 일치
-	radius = innerRadius * 0.92,
+	radius = innerRadius * 1.095, 
+	// radius = innerRadius * 1,
     color = d3.scale.category20c();
 
 var partition = d3.layout.partition()
@@ -79,7 +80,7 @@ function draw(error, genus, root) {
 					.attr('y1', function(d, i) { return getY1(d.value, i); })
 					.attr('x2', function(d, i) { return getX(d.value, i); })
 					.attr('y2', function(d, i) { return getY(d.value, i); })
-					.style('opacity', 0.22) // 0.18
+					.style('opacity', 0.22) // 0.18 // 0.22
 					.attr('stroke-width', 1)
 					.attr('stroke', '#92A7B4')
 					.on("mouseover", function(d, i) {
@@ -111,6 +112,9 @@ function draw(error, genus, root) {
 						tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 					})
 					.on("mouseout", function(d) {
+
+						clicked = false;
+						animation();
 
 						// unselectDots();
 						// unselectArc(path);
@@ -158,6 +162,9 @@ function draw(error, genus, root) {
 						tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 					})
 					.on("mouseout", function(d) {
+
+						clicked = false;
+						animation();
 
 						// d3.select(this).transition().duration(230).attr('r', 1.7);
 						// unselectArc(path);
@@ -217,6 +224,9 @@ function draw(error, genus, root) {
 			tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 		})
 		.on("mouseout", function(d) {
+
+			clicked = false;
+			animation();
 
 			// unselectArc(path);
 			// unselectDots();

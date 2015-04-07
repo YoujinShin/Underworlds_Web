@@ -232,7 +232,7 @@ function unselectLine() {
 		
 		d3.select(this).attr("stroke", "#92A7B4");
 		d3.select(this).attr("stroke-width", 1);
-		d3.select(this).style('opacity', 0.22);
+		d3.select(this).style('opacity', 0.0); // 0.22
 	});
 }
 
