@@ -47,7 +47,7 @@ queue()
 
 var radius = Math.min(width, height) / 2,
 	// radius = innerRadius * 1.092, // 일치
-	radius = innerRadius * 0.9,
+	radius = innerRadius * 0.92,
     color = d3.scale.category20c();
 
 var partition = d3.layout.partition()
