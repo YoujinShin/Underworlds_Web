@@ -59,7 +59,6 @@ h3 {
 	font-size: 20px;
 	line-height: 150%;
 	font-weight: 300;
-
 }
 
 #footer {
@@ -72,7 +71,7 @@ h3 {
 
 #name {
 	/*background-color: rgba(255,255,255,0.0);*/
-	background-color: rgba(21,32,45,1);
+	background-color: rgba(21,32,45,0.85);
 	position: relative;
 	width: 100%;
 	margin: 0px;
