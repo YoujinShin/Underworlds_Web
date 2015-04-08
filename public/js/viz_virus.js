@@ -120,10 +120,10 @@ function ready(error, viruses) {
 	text_human = g2.append('text')
 			.attr('class', 'virusHost')
 			.attr('x', xScale2(38) + 10)
-			.attr('y', yScale2( getLogValue(151)) + 15)
+			.attr('y', yScale2( getLogValue(151)) + 18)
 			.text('humans')
 			.style('fill', '#6ab8f7')
-			.style('fill-opacity', 0.8)
+			.style('fill-opacity', 0.6)
 			.style("text-anchor", "start");
 
 }
