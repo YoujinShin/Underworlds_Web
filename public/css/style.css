@@ -53,12 +53,13 @@ h3 {
 
 .title {
 	/*font-family: 'Open Sans', sans-serif;*/
-	font-family: 'futura', sans-serif;
+	font-family: 'london', sans-serif;
 	letter-spacing: 2px;
 	color: rgba(255,255,255,0.9);
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 150%;
-	font-weight: 300;
+	font-weight: lighter;
+	/*font-weight: 300;*/
 }
 
 #footer {
@@ -108,7 +109,7 @@ h3 {
 
 #header {
 	/*font-family: 'Open Sans', sans-serif;*/
-	font-family: 'futura', sans-serif;
+	font-family: 'london', sans-serif;
 	letter-spacing: 6px;
 	font-size: 20px;
 	left: 0px !important;
