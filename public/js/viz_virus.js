@@ -25,7 +25,7 @@ var g2 = svg2.append('g')
 
 var xScale2 = d3.scale.linear()
 	.domain([0, 70])
-	.range([50, width2 - 100]);
+	.range([60, width2 - 20]);
 
 var yScale2 = d3.scale.linear()
 	.domain([getLogValue(1), getLogValue(23816)])
@@ -178,7 +178,7 @@ function getGuideVirus() {
 
 		g2.append('text')
 			.attr('class', 'scaleText')
-			.attr('x',xScale2(0) - 10)
+			.attr('x',xScale2(0) - 20)
 			.attr('y', yScale2( getLogValue(r) ) )
 			.text(r)
 			.style('opacity', 1)
@@ -313,26 +313,29 @@ function getGuideHost() {
 
 	text_host = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale2(70) + 40)
+			// .attr('x', xScale2(70) + 40)
+			.attr('x', xScale2(0) - 20)
 			.attr('y', yScale2(0) + 50)
-			.text('(Host)')
-			.style('fill', '#fff')
-			.style("text-anchor", "start");
+			.text('HOST')
+			.style('fill', '#aaa')
+			// .style('fill', 'rgba(255,255,255,0.6)')
+			.style("text-anchor", "end");
 
 	text_count = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale2(0) - 10)
-			.attr('y', yScale2(getLogValue(23816)) - 60)
-			.text('(Count)')
-			.style('fill', '#fff')
+			.attr('x', xScale2(0) - 20)
+			.attr('y', yScale2(getLogValue(23816)) - 50)
+			.text('COUNT')
+			.style('fill', '#aaa')
 			.style("text-anchor", "end");
 
-	// text_title = g2.append('text')
-	// 		.attr('class', 'virusHost')
-	// 		.attr('x', xScale2(35) - 10)
-	// 		.attr('y', yScale2(getLogValue(23816)) - 60)
-	// 		.text('SEWAGE VIRUS PROFILE')
-	// 		.style('fill', '#fff')
-	// 		.style("text-anchor", "end");
+
+	text_title = g2.append('text')
+			.attr('class', 'middleTextBIG')
+			.attr('x', xScale2(35))
+			.attr('y', yScale2(getLogValue(23816)) - 0)
+			.text('SEWAGE VIRUS PROFILE')
+			.style('fill', '#fff')
+			.style("text-anchor", "middle");
 
 }

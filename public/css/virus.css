@@ -26,29 +26,31 @@ button {
 
 	font-family: 'Open Sans', sans-serif !important;
 	font-size: 10px !important;
-	color: #fff !important;
+	color: rgba(255,255,255,0.5) !important;
 	font-weight: 400 !important; 
 	padding: 5px !important;
-	border: 1px solid #aaa !important;
+	border: 1px solid rgba(255,255,255,0.4) !important;
 	/*opacity: 0.9 !important;*/
 	/*border-radius: 5px !important;*/
 	background-color: rgba(255,255,255,0) !important;
 	text-align: right !important;
+	letter-spacing: 1px;
 
 }
 
 button:active {
 
 	background-color: rgba(255,255,255,0.2) !important;
+	color: rgba(255,255,255,0.9) !important;
 }
 
 .count {
 	position: absolute;
-	right: 10px;
+	right: 30px;
 	/*top: 50px;*/
 }
 
 .host {
 	position: absolute;
-	right: 76px;
+	right: 100px;
 }

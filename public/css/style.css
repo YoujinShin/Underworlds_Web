@@ -1,3 +1,13 @@
+@font-face {
+    font-family: london;
+    src: url(London-Tube.ttf);
+}
+
+@font-face {
+    font-family: futura;
+    src: url(futura-normal.ttf);
+}
+
 body {
 	min-width: 1200px;
 	padding-bottom: 40px;
@@ -42,12 +52,14 @@ h3 {
 }
 
 .title {
-	font-family: 'Open Sans', sans-serif;
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-family: 'futura', sans-serif;
 	letter-spacing: 2px;
 	color: rgba(255,255,255,0.9);
-	font-size: 30px;
+	font-size: 20px;
 	line-height: 150%;
 	font-weight: 300;
+
 }
 
 #footer {
@@ -60,19 +72,20 @@ h3 {
 
 #name {
 	/*background-color: rgba(255,255,255,0.0);*/
-	background-color: rgba(21,32,45,0.9);
+	background-color: rgba(21,32,45,1);
 	position: relative;
 	width: 100%;
 	margin: 0px;
 
-	top: 30px;
+	top: 0px;
 	padding: 20px;
 	padding-left: 20px;
-	/*padding-bottom: 10px !important;*/
+	padding-top: 30px;
+	padding-bottom: 12px !important;
 
 	z-index: 40;
 
-	/*position: fixed;*/
+	position: fixed;
 	/*padding-top: 34px;*/
 }
 
@@ -95,8 +108,9 @@ h3 {
 }
 
 #header {
-	font-family: 'Open Sans', sans-serif;
-	letter-spacing: 4px;
+	/*font-family: 'Open Sans', sans-serif;*/
+	font-family: 'futura', sans-serif;
+	letter-spacing: 6px;
 	font-size: 20px;
 	left: 0px !important;
 	/*padding-left: 30px;*/
@@ -209,25 +223,29 @@ a:hover {
 }
 
 #about_tab {
+	font-family: 'futura', sans-serif;
 	margin-right: 30px;
 	padding: 14px;
-	font-size: 13px;
+	font-size: 11px;
 	text-decoration: none;
+	font-weight: 400;
 }
 
 #team_tab {
-	/*margin-right: 70px;*/
+	font-family: 'futura', sans-serif;
+	margin-right: 30px;
 	/*margin-right: 0px;*/
 	padding: 14px;
 	padding-right: 0px;
-	font-size: 13px;
+	font-size: 11px;
 	text-decoration: none;
 }
 
 #contact_tab {
-	/*margin-right: 45px;*/
+	font-family: 'futura', sans-serif;
+	margin-right: 0px;
 	padding: 14px;
-	font-size: 13px;
+	font-size: 11px;
 	text-decoration: none;
 }
 
@@ -255,6 +273,12 @@ a:hover {
 	/*text-decoration: underline;*/
 }
 
-.bg-gray {
-
+#foot_band {
+	background-color: rgba(255,255,255,0.2);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 4px;
+	z-index: 50;
 }
