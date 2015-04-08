@@ -41,3 +41,14 @@ button:active {
 
 	background-color: rgba(255,255,255,0.2) !important;
 }
+
+.count {
+	position: absolute;
+	right: 10px;
+	/*top: 50px;*/
+}
+
+.host {
+	position: absolute;
+	right: 76px;
+}

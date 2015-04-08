@@ -1,4 +1,4 @@
-var margin2 = { top: 40, right: 30, bottom: 20, left: 0 };
+var margin2 = { top: 20, right: 30, bottom: 20, left: 0 };
 
 var width2 = 1020,
 	width2 = width2 - margin2.left - margin2.right,
@@ -326,5 +326,13 @@ function getGuideHost() {
 			.text('(Count)')
 			.style('fill', '#fff')
 			.style("text-anchor", "end");
+
+	// text_title = g2.append('text')
+	// 		.attr('class', 'virusHost')
+	// 		.attr('x', xScale2(35) - 10)
+	// 		.attr('y', yScale2(getLogValue(23816)) - 60)
+	// 		.text('SEWAGE VIRUS PROFILE')
+	// 		.style('fill', '#fff')
+	// 		.style("text-anchor", "end");
 
 }
