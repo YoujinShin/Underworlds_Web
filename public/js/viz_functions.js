@@ -194,10 +194,12 @@ function selectDots(name) {
 }
 
 function selectDots2(genus, family, c) {
-	dots.each(function(e) {
+	dots.each(function(e, i) {
 		if((e.genus == genus) && (e.family == family)) {
 			d3.select(this).style('fill', c);
 			d3.select(this).transition().duration(480).attr('r', 5);
+			// console.log(i);
+			order = i;
 		}
 	});
 }

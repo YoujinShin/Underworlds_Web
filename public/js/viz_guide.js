@@ -19,10 +19,10 @@ function radiusGuide() {
 			.style('opacity', 0.1)
 			.attr('stroke', '#fff')
 			.attr('stroke-width', function() {
-				if(i==0) { return 1; }
+				if(i==0) { return 0.5; }
 				else { return 0.5; }
 			})
-			.style('fill-opacity', 0.06);
+			.style('fill-opacity', 0.0);
 
 		g.append('text')
 			.attr('class', 'scaleText')
