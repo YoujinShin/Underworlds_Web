@@ -307,7 +307,7 @@ function selectOne() {
 			var currentColor = getColor(d.phylum);
 
 			d3.select(this).attr("stroke", currentColor);
-			d3.select(this).attr("stroke-width", 2);
+			d3.select(this).attr("stroke-width", 1.6);
 			d3.select(this).style('opacity', 0.9);
 
 			selectParents2(d, path);

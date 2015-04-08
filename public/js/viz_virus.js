@@ -56,16 +56,19 @@ function ready(error, viruses) {
 				.attr('stroke-width', 1)
 			.on('mouseover', function(d) {
 				tooltip.text(d.Virus_name);
+				selectDots_virus(d.Virus_name);
 				// tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
-				d3.select(this).attr("stroke-width", 2);
+				d3.select(this).attr("stroke-width", 1.6);
 				d3.select(this).style('opacity', 0.99);
 			})
 			.on('mousemove', function() {
 				tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 			})
 			.on('mouseout', function(d) {
+				unselectDots_virus();
+				unselectLines_virus();
 				tooltip.style('visibility', 'hidden');
 
 				d3.select(this).attr("stroke-width", 1);
@@ -88,16 +91,20 @@ function ready(error, viruses) {
 				.style('fill-opacity', 0.85)
 			.on('mouseover', function(d) {
 				tooltip.text(d.Virus_name);
+				selectLines_virus(d.Virus_name);
 				// tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
-				d3.select(this).transition().duration(0).attr('r', 5);
+				d3.select(this).transition().duration(330).attr('r', 5);
 				d3.select(this).style('opacity', 0.99);
 			})
 			.on('mousemove', function() {
 				tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 			})
 			.on('mouseout', function(d) {
+				unselectDots_virus();
+				unselectLines_virus();
+
 				tooltip.style('visibility', 'hidden');
 				d3.select(this).style('opacity', 0.8);
 				d3.select(this).attr('r', 2.4);
