@@ -3,7 +3,7 @@ function selectDots_virus(name) {
 	dots_virus.each(function(e, i) {
 		if(e.Virus_name == name) {
 			d3.select(this).transition().duration(330)
-				.attr('r', 5);
+				.attr('r', 4);
 		}
 	});
 }

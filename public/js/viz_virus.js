@@ -48,16 +48,12 @@ function ready(error, viruses) {
 				.attr('y1', function() { return yScale2(0); })
 				.attr('x2', function(d,i) { return xScale2(i); })
 				.attr('y2', function(d,i) {  return yScale2( getLogValue(d.Count)); })
-				// .attr('stroke', '#92A7B4')
-				.attr('stroke', function(d) {
-					return getColorVirus(d.Host_type);
-				})
+				.attr('stroke', function(d) { return getColorVirus(d.Host_type); })
 				.style('opacity', 0.22)
 				.attr('stroke-width', 1)
 			.on('mouseover', function(d) {
 				tooltip.text(d.Virus_name);
 				selectDots_virus(d.Virus_name);
-				// tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
 				d3.select(this).attr("stroke-width", 1.6);
@@ -75,6 +71,21 @@ function ready(error, viruses) {
 				d3.select(this).style('opacity', 0.22);
 			});
 
+	human_virus = g2.selectAll('.dot')
+			.data(viruses)
+				.enter()
+			.append('circle')
+				.attr('cx', function(d,i) { return xScale2(i); })
+				.attr('cy', function(d,i) {  return yScale2( getLogValue(d.Count)); })
+				.attr('r', 7)
+				.attr('stroke', function(d) { return getColorVirus(d.Host_type); })
+				.attr('stroke-width', 0.6)
+				.style('visibility', function(d, i) {
+					if(d.Host_specific == 'Humans') { return 'visible'; }
+					else { return 'hidden'; }
+				})
+				.style('fill', 'rgba(0,0,0,0)');
+
 	dots_virus = g2.selectAll('.dot')
 			.data(viruses)
 				.enter()
@@ -84,18 +95,14 @@ function ready(error, viruses) {
 				.attr('r', 2.4)
 				.attr('stroke', '#92A7B4')
 				.attr('stroke-width', 0)
-				// .style('fill', '#92A7B4')
-				.style('fill', function(d) {
-					return getColorVirus(d.Host_type);
-				})
+				.style('fill', function(d) { return getColorVirus(d.Host_type); })
 				.style('fill-opacity', 0.85)
 			.on('mouseover', function(d) {
 				tooltip.text(d.Virus_name);
 				selectLines_virus(d.Virus_name);
-				// tooltip.text(d.Virus_name + ': ' + d.Count);
 				tooltip.style('visibility', 'visible');
 
-				d3.select(this).transition().duration(330).attr('r', 5);
+				d3.select(this).transition().duration(330).attr('r', 4);
 				d3.select(this).style('opacity', 0.99);
 			})
 			.on('mousemove', function() {
@@ -109,6 +116,16 @@ function ready(error, viruses) {
 				d3.select(this).style('opacity', 0.8);
 				d3.select(this).attr('r', 2.4);
 			});
+
+	text_human = g2.append('text')
+			.attr('class', 'virusHost')
+			.attr('x', xScale2(38) + 10)
+			.attr('y', yScale2( getLogValue(151)) + 15)
+			.text('humans')
+			.style('fill', '#6ab8f7')
+			.style('fill-opacity', 0.8)
+			.style("text-anchor", "start");
+
 }
 
 d3.select(".count")
@@ -137,7 +154,12 @@ function updateByCount() {
 	dots_virus.transition().duration(430)
 		.attr('cx', function(d) { return xScale2(d.Order); });
 
+	human_virus.transition().duration(430)
+		.attr('cx', function(d) { return xScale2(d.Order); });
+
 	updateGuideHost_count();
+
+	text_human.transition().duration(430).attr('x', xScale2(30) + 10);
 }
 
 function updateByHost() {
@@ -149,7 +171,12 @@ function updateByHost() {
 	dots_virus.transition().duration(430)
 		.attr('cx', function(d, i) { return xScale2(i); });
 
+	human_virus.transition().duration(430)
+		.attr('cx', function(d, i) { return xScale2(i); });
+
 	updateGuideHost_host();
+
+	text_human.transition().duration(430).attr('x', xScale2(38) + 10);
 }
 
 function getLogValue(d) {

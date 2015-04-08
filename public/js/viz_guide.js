@@ -107,7 +107,7 @@ var yScale = d3.scale.linear()
 // phylum,class,order,family,genus,value
 // var xpos = -1 * pos_left_x + 36;
 var xpos = innerRadius + 140
-var xpos2 = xpos+ 80;
+var xpos2 = xpos+ 70;
 
 function texonomyList() {
 
