@@ -8,8 +8,8 @@ function radiusGuide() {
 	for(var i = 0; i < radiusValues.length; i++) {
 
 		var r = radiusValues[i];
-		// var x = -innerRadius - 139;
-		var x = 0;
+		var x = -innerRadius - 140;
+		// var x = 0;
 
 		g.append('circle')
 			.attr('r', linearScale( Math.log10(r) ) )
@@ -31,7 +31,7 @@ function radiusGuide() {
 			.text(r)
 			.style('opacity', 1)
 			.attr('stroke-width', 1)
-			.style("text-anchor", "middle");
+			.style("text-anchor", "end");
 
 		g.append('line')
 			.attr('x1', 0 )
