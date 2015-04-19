@@ -5,10 +5,12 @@
 	<link rel="shortcut icon" href="logo.png" />
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 
-	<link href="/css/viz.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-	<link href="/css/virus.css" rel="stylesheet">
+	<link href="css/viz.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/virus.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -18,14 +20,16 @@
 
 			<div class="row" >
 	            <div id="header" class="col-sm-4" style="text-align:left;">  
-	            	<a href="/" style="text-decoration: none; color: rgba(255,255,255,0.98)">
-	            		<span style="font-size:22px;">UNDERWORLDS</span>
+	            	<a href="/" style="text-decoration: none; color: rgba(255,255,255,0.98);">
+	            		<!-- UNDER <br>WORLDS -->
+	            		UNDER
+	            		<br><span style="letter-spacing: 5px;">WORLDS</span>
 	            	</a>
 	            </div>
 	            <div class="col-sm-8 tab" style="text-align:right;">  
-					<a id="about_tab"  href="#about" style="color:rgba(255,255,255,0.82); ">+ ABOUT</a>
-					<a id="team_tab" href="#team" style="color:rgba(255,255,255,0.82); ">+ TEAM</a>
-					<a id="contact_tab" href="mailto:underworlds-info@mit.edu" style="color:rgba(255,255,255,0.82); text-decoration: none;">+ CONTACT</a>
+					<a id="about_tab"  href="#about" style="color:rgba(255,255,255,0.82); ">ABOUT</a>
+					<a id="team_tab" href="#team" style="color:rgba(255,255,255,0.82); ">TEAM</a>
+					<a id="contact_tab" href="mailto:underworlds-info@mit.edu" style="color:rgba(255,255,255,0.82); text-decoration: none;">CONTACT</a>
 				</div>
 			</div>
 
@@ -64,18 +68,18 @@
 	            	<!-- <hr style="margin-bottom: 0px; opacity: 0.4">  -->
 	            	<hr style="margin-bottom: 10px; opacity: 0.6; margin-right: 0%">
 
-	            	<h3 class="title" >
+	         <!--    	<h3 class="title" >
 					A vast reservoir of information on human health and behavior 
 					<br>lives in our sewageand this resource is untapped
-					</h3>
+					</h3> -->
 
 
-	            	<!-- <h3 class="title" >
+	            	<h3 class="title" >
 					A vast reservoir of information on human <br>
 					health and behavior lives in our sewage<br>
-					…and this resource is untapped
+					and this resource is untapped
 					</h3>
- -->
+
 					<!-- <hr style="margin-bottom: 0px; opacity: 0.4"> -->
 	            </div>
 	        </div>
@@ -109,7 +113,7 @@
 	            	<!-- <hr style="margin-bottom: 0px; opacity: 0.6">  -->
 
 	            	<h3 class="title" >
-	            		Imagine a future in which <br>sewage is mined for real-time information
+	            		<!-- Imagine a future in which <br>sewage is mined for real-time information -->
 					<!-- Imagine a future in which <br>sewage is mined for real-time information -->
 					</h3>
 
@@ -142,7 +146,7 @@
 			
 			<!-- <h3 class="title">TEAM</h3> -->
 			<hr style="margin-bottom: 10px; opacity: 0.6; margin-right: 0%">
-			<h3 class="title">Team</h3>
+			<!-- <h3 class="title">Team</h3> -->
 			
 			<!-- First row -->
 			<div class="row" style="margin:0px">
@@ -301,8 +305,6 @@
 				</div>
 		
 			</div> <!-- first row -->
-
-
 		
 			
 			<div class="row" id="contact" style="margin:0px; margin-top: 10px;">
@@ -332,25 +334,24 @@
 
 
 	<!-- library -->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/queue.v1.min.js"></script>
-	<script src="/js/d3.v3.min.js"></script>
-	<script src="/js/vendor/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/queue.v1.min.js"></script>
+	<script src="js/d3.v3.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
 
-	<script src="/js/viz2.js"></script> 
-	<script src="/js/viz_color.js"></script> 
-	<script src="/js/viz_functions.js"></script> 
-	<script src="/js/viz_guide.js"></script> 
-	<script src="/js/main.js"></script> 
+	<script src="js/viz2.js"></script> 
+	<script src="js/viz_color.js"></script> 
+	<script src="js/viz_functions.js"></script> 
+	<script src="js/viz_guide.js"></script> 
+	<script src="js/main.js"></script> 
 
-	<script src="/js/viz_virus.js"></script>
-	<script src="/js/viz_virus_functions.js"></script>
+	<script src="js/viz_virus.js"></script>
+	<script src="js/viz_virus_functions.js"></script>
 
 
 	<script>
 		$(function() {
 		  
-
 		  $('a[href*=#]:not([href=#])').click(function() {
 		  	clicked = true;
 			animation();
