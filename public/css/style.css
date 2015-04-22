@@ -61,7 +61,7 @@ p {
 	/*font-family: 'Josefin Sans', sans-serif;*/
 	font-family: 'HelveticaN', sans-serif;
 	font-size: 12px !important;
-	letter-spacing: 1px !important;
+	letter-spacing: 0px !important;
 	font-weight: 300;
 	line-height: 150%;
 	color: #aaa;
