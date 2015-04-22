@@ -52,6 +52,11 @@ function ready(error, viruses) {
 				.style('opacity', 0.22)
 				.attr('stroke-width', 1)
 			.on('mouseover', function(d) {
+				unselectDots_virus();
+				unselectLines_virus();
+				clicked = true;
+				animation();
+
 				tooltip.text(d.Virus_name);
 				selectDots_virus(d.Virus_name);
 				tooltip.style('visibility', 'visible');
@@ -63,12 +68,12 @@ function ready(error, viruses) {
 				tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 			})
 			.on('mouseout', function(d) {
-				unselectDots_virus();
-				unselectLines_virus();
-				tooltip.style('visibility', 'hidden');
+				// unselectDots_virus();
+				// unselectLines_virus();
+				// tooltip.style('visibility', 'hidden');
 
-				d3.select(this).attr("stroke-width", 1);
-				d3.select(this).style('opacity', 0.22);
+				// d3.select(this).attr("stroke-width", 1);
+				// d3.select(this).style('opacity', 0.22);
 			});
 
 	human_virus = g2.selectAll('.dot')
@@ -98,6 +103,11 @@ function ready(error, viruses) {
 				.style('fill', function(d) { return getColorVirus(d.Host_type); })
 				.style('fill-opacity', 0.85)
 			.on('mouseover', function(d) {
+				unselectDots_virus();
+				unselectLines_virus();
+				clicked = true;
+				animation();
+
 				tooltip.text(d.Virus_name);
 				selectLines_virus(d.Virus_name);
 				tooltip.style('visibility', 'visible');
@@ -109,12 +119,12 @@ function ready(error, viruses) {
 				tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
 			})
 			.on('mouseout', function(d) {
-				unselectDots_virus();
-				unselectLines_virus();
+				// unselectDots_virus();
+				// unselectLines_virus();
 
-				tooltip.style('visibility', 'hidden');
-				d3.select(this).style('opacity', 0.8);
-				d3.select(this).attr('r', 2.4);
+				// tooltip.style('visibility', 'hidden');
+				// d3.select(this).style('opacity', 0.8);
+				// d3.select(this).attr('r', 2.4);
 			});
 
 	text_human = g2.append('text')
@@ -134,7 +144,7 @@ d3.select(".count")
 		animation();
 
 		updateByCount();
-		
+		tooltip.style('visibility', 'hidden');
 	});
 
 d3.select(".host")
@@ -143,6 +153,7 @@ d3.select(".host")
 		animation();
 
 		updateByHost();
+		tooltip.style('visibility', 'hidden');
 	});
 
 function updateByCount() {
@@ -369,7 +380,7 @@ function getGuideHost() {
 			.attr('x', xScale2(35))
 			.attr('y', yScale2(getLogValue(23816)) - 0)
 			.text('SEWAGE VIRUS PROFILE')
-			.style('fill', '#fff')
+			// .style('fill', '#fff')
 			.style("text-anchor", "middle");
 
 }

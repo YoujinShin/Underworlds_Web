@@ -107,8 +107,8 @@
 
 	color: rgba(255,255,255,0.8);
 
-/*	font-family: 'Open Sans', sans-serif;
-	font-family: 'HelveticaNeue', sans-serif;*/
+	/*font-family: 'Open Sans', sans-serif;*/
+	/*font-family: 'HelveticaNeue', sans-serif;*/
 	font-family: 'HelveticaN', sans-serif;
 	font-size: 11px;
 	/*font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;*/
@@ -161,7 +161,7 @@
 	font-family: 'HelveticaCd', sans-serif;
 	font-size: 10px;
 	opacity: 0.9;
-	fill: rgba(255,255,255,0.9);
+	fill: rgba(255,255,255,0.92);
 	stroke: none;
 	letter-spacing: 1px;
 	font-weight: lighter;

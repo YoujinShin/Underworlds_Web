@@ -48,7 +48,9 @@ function selectParents2(d, path) {
 
 var opacScale = d3.scale.linear()
 					.domain([5, 1])  
-					.range([0.1, 1]);
+					.range([0.24, 1]);
+					// .range([0.1, 1]);
+
 
 function selectArc(path, name0, name1, name2, name3, name4, depth) {
 
