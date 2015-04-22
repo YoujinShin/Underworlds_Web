@@ -27,7 +27,7 @@ function radiusGuide() {
 		g.append('text')
 			.attr('class', 'scaleText')
 			.attr('x',x)
-			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) +10)
+			.attr('y', Math.sin(Math.PI/2) * linearScale( Math.log10(r) ) +0)
 			.text(r)
 			.style('opacity', 1)
 			.attr('stroke-width', 1)
