@@ -47,7 +47,7 @@ body {
 	font-family: 'HelveticaN', sans-serif;
 	/*font-weight: 400;*/
 	font-size: 12px !important;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	line-height: 160%;
 	background-color: rgba(255,255,255,0.04);
 	padding: 10px;
@@ -61,7 +61,7 @@ p {
 	/*font-family: 'Josefin Sans', sans-serif;*/
 	font-family: 'HelveticaN', sans-serif;
 	font-size: 12px !important;
-	letter-spacing: 1px;
+	letter-spacing: 1px !important;
 	font-weight: 300;
 	line-height: 150%;
 	color: #aaa;
@@ -92,7 +92,7 @@ h3 {
 	/*font-family: 'Josefin Sans', sans-serif;*/
 	font-family: 'HelveticaNeue', sans-serif;
 	/*font-family: 'london', sans-serif;*/
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	color: #3dabec;
 	color: rgba(255,255,255, 1);
 	font-size: 32px;
