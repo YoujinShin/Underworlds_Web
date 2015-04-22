@@ -22,7 +22,7 @@ svg.append('rect')
 		// .style('fill', '#000');
 		.style('fill', '#15202D'); // dark blue
 
-var tx = width/2 + margin.left - 10;
+var tx = width/2 + margin.left - 15;
 var ty = height/2 + margin.top;
 
 var g = svg.append('g')

@@ -145,9 +145,11 @@
 .taxoName {
 /*	font-family: 'Open Sans', sans-serif;
 	font-family: 'HelveticaNeue', sans-serif;*/
-	font-family: 'HelveticaN', sans-serif;
+	font-family: 'HelveticaCd', sans-serif;
 	font-size: 10px;
-	fill: rgba(255,255,255,0.4);
+	/*fill: rgba(255,255,255,0.4);*/
+	fill: #aaa;
+	opacity: 0.4;
 	stroke: none;
 	letter-spacing: 1px;
 	font-weight: lighter;
@@ -156,8 +158,9 @@
 .selected {
 /*	font-family: 'Open Sans', sans-serif;
 	font-family: 'HelveticaNeue', sans-serif;*/
-	font-family: 'HelveticaN', sans-serif;
+	font-family: 'HelveticaCd', sans-serif;
 	font-size: 10px;
+	opacity: 0.9;
 	fill: rgba(255,255,255,0.9);
 	stroke: none;
 	letter-spacing: 1px;

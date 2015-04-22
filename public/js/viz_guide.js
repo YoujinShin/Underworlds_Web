@@ -99,7 +99,7 @@ var domain_name, phylum_name, class_name, order_name,
 	family_name, genus_name, selected, selectedBox;
 
 var yScale = d3.scale.linear()
-				.domain([0, 5])  
+				.domain([1, 5])  
 				.range([-height*0.18 + 3, height*0.18 + 3]);
 				// .range([-90, outerRadius-90]);
 				// .range([-height*0.18, height*0.25]);
@@ -107,7 +107,7 @@ var yScale = d3.scale.linear()
 // phylum,class,order,family,genus,value
 // var xpos = -1 * pos_left_x + 36;
 var xpos = innerRadius + 140
-var xpos2 = xpos+ 70;
+var xpos2 = xpos+ 60;
 
 function texonomyList() {
 
@@ -147,13 +147,13 @@ function texonomyList() {
 		.attr("stroke", "#fff")
 		.style("text-anchor", "start");
 
-	domain_taxo = g.append('text')
-		.attr('class', 'taxoName')
-		.attr('x', xpos)
-		.attr('y', yScale(0) )
-		.text('DOMAIN') //Bacterial Profile
-		.attr('stroke-width', 1)
-		.style("text-anchor", "start");
+	// domain_taxo = g.append('text')
+	// 	.attr('class', 'taxoName')
+	// 	.attr('x', xpos)
+	// 	.attr('y', yScale(0) )
+	// 	.text('DOMAIN') //Bacterial Profile
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "start");
 
 	phylum_taxo = g.append('text')
 		.attr('class', 'taxoName')
@@ -196,14 +196,14 @@ function texonomyList() {
 		.style("text-anchor", "start");
 
 	/////////////////////////////////////
-	domain_name = g.append('text')
-		.attr('class', 'selected')
-		.attr('x', xpos2)
-		.attr('y', yScale(0) )
-		.text('Bacteria') //Bacterial Profile
-		.style('fill', 'rgba(255,255,255,0.4)')
-		.attr('stroke-width', 1)
-		.style("text-anchor", "start");
+	// domain_name = g.append('text')
+	// 	.attr('class', 'selected')
+	// 	.attr('x', xpos2)
+	// 	.attr('y', yScale(0) )
+	// 	.text('Bacteria') //Bacterial Profile
+	// 	.style('fill', 'rgba(255,255,255,0.4)')
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "start");
 
 	phylum_name = g.append('text')
 		.attr('class', 'selected')
