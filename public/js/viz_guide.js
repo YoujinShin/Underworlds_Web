@@ -201,6 +201,7 @@ function texonomyList() {
 		.attr('x', xpos2)
 		.attr('y', yScale(0) )
 		.text('Bacteria') //Bacterial Profile
+		.style('fill', 'rgba(255,255,255,0.4)')
 		.attr('stroke-width', 1)
 		.style("text-anchor", "start");
 
@@ -269,19 +270,24 @@ function changeSelectedBox(depth) {
 function changeTaxoName(p, c, o, f, g) {
 
 	phylum_name.text(p);
-	phylum_name.transition().duration(100).style('fill-opacity', 0.9);
+	phylum_name.style('fill', getColor(p));
+	phylum_name.transition().duration(100).style('fill-opacity', opacScale(1));
 
 	class_name.text(c);
-	class_name.transition().duration(100).style('fill-opacity', 0.9);
+	class_name.style('fill', getColor(p));
+	class_name.transition().duration(100).style('fill-opacity', opacScale(2));
 
 	order_name.text(o);
-	order_name.transition().duration(100).style('fill-opacity', 0.9);
+	order_name.style('fill', getColor(p));
+	order_name.transition().duration(100).style('fill-opacity', opacScale(3));
 
 	family_name.text(f);
-	family_name.transition().duration(100).style('fill-opacity', 0.9);
+	family_name.style('fill', getColor(p));
+	family_name.transition().duration(100).style('fill-opacity', opacScale(4));
 
 	genus_name.text(g);
-	genus_name.transition().duration(100).style('fill-opacity', 0.9);
+	genus_name.style('fill', getColor(p));
+	genus_name.transition().duration(100).style('fill-opacity', opacScale(1));
 }
 
 var clicked = false;

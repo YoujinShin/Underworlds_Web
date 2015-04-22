@@ -67,6 +67,8 @@ function selectArc(path, name0, name1, name2, name3, name4, depth) {
 			d3.select(this).style("stroke", '#15202D');
 			// d3.select(this).style("fill", '#15202D');
 			d3.select(this).style("fill-opacity", opacScale(e_depth));
+
+
 			// d3.select(this).style("fill-opacity", 0.9);
 		} else if(e.name==name1 && e.depth==(depth-1)) {
 			d3.select(this).style("stroke", '#15202D');
