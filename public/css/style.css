@@ -261,14 +261,14 @@ a:hover {
 .tab {
 	position: relative;
 	/*color: white;*/
-	font-family: 'Josefin Sans', sans-serif;
-	/*font-family: 'HelveticaNeue', sans-serif;*/
+	/*font-family: 'Josefin Sans', sans-serif;*/
+	font-family: 'HelveticaN', sans-serif;
 	font-weight: 400;
 	font-size: 14px;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	/*top: 25px;*/
 	padding-top: 4px;
-	color: rgba(255,255,255,0.8);
+	/*color: rgba(255,255,255,0.8);*/
 	text-align: right;
 	padding-left: 100px;
 	padding-bottom: -20px;

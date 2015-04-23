@@ -100,14 +100,15 @@ var domain_name, phylum_name, class_name, order_name,
 
 var yScale = d3.scale.linear()
 				.domain([1, 5])  
-				.range([-height*0.18 + 3, height*0.18 + 3]);
+				.range([-height*0.12 + 3, height*0.12 + 3]);
+				// .range([-height*0.18 + 3, height*0.18 + 3]);
 				// .range([-90, outerRadius-90]);
 				// .range([-height*0.18, height*0.25]);
 
 // phylum,class,order,family,genus,value
 // var xpos = -1 * pos_left_x + 36;
 var xpos = innerRadius + 140
-var xpos2 = xpos+ 60;
+var xpos2 = xpos+ 70;
 
 function texonomyList() {
 
