@@ -46,9 +46,11 @@ function selectParents2(d, path) {
 	$( "#taxo" ).html( taxo );
 }
 
-var opacScale = d3.scale.linear()
+// var opacScale = d3.scale.linear()
+// var opacScale = d3.scale.pow()
+var opacScale = d3.scale.log()
 					.domain([5, 1])  
-					.range([0.24, 1]);
+					.range([0.26, 1]);
 					// .range([0.1, 1]);
 
 
@@ -202,6 +204,17 @@ function selectDots2(genus, family, c) {
 		if((e.genus == genus) && (e.family == family)) {
 			d3.select(this).style('fill', c);
 			d3.select(this).transition().duration(480).attr('r', 5);
+			// console.log(i);
+			order = i;
+		}
+	});
+}
+
+function selectDots3(genus, family, c) {
+	dots.each(function(e, i) {
+		if((e.genus == genus) && (e.family == family)) {
+			d3.select(this).style('fill', c);
+			d3.select(this).attr('r', 5);
 			// console.log(i);
 			order = i;
 		}

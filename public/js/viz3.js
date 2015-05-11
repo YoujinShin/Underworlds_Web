@@ -1,7 +1,6 @@
 var margin = { top: 20, right: 30, bottom: 30, left: 30 };
 
 var width = 1000,
-// var width = screen.width*0.9,
 	width = width - margin.left - margin.right,
 	height = width * 0.65, // 0.66
 	height = height - margin.top - margin.bottom;
@@ -19,7 +18,6 @@ svg.append('rect')
 		.attr('y', -margin.top)
 		.attr('width', width + margin.left + margin.right)
 		.attr('height', height + margin.top + margin.bottom)
-		// .style('fill', '#000');
 		.style('fill', '#15202D'); // dark blue
 
 var tx = width/2 + margin.left - 25;
@@ -46,9 +44,7 @@ queue()
 	.await(draw);
 
 var radius = Math.min(width, height) / 2,
-	// radius = innerRadius * 1.092, // 일치
 	radius = innerRadius * 1.095, 
-	// radius = innerRadius * 1,
     color = d3.scale.category20c();
 
 var partition = d3.layout.partition()
@@ -59,8 +55,14 @@ var partition = d3.layout.partition()
 var arc = d3.svg.arc()
     .startAngle(function(d) { return d.x; })
     .endAngle(function(d) { return d.x + d.dx; })
-    .innerRadius(function(d) { return Math.sqrt(d.y); })
-    .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
+    .innerRadius(function(d) { 
+    	return innerRadius * (0.7 * 0.2 * d.depth + 0.3);
+    })
+    .outerRadius(function(d) { 
+    	return innerRadius * (0.7 * 0.2 * (d.depth+1) + 0.3) - 1; 
+    });
+    // .innerRadius(function(d) { return Math.sqrt(d.y); })
+    // .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
 
 var lines;
 var dots;
@@ -81,7 +83,7 @@ function draw(error, genus, root) {
 					.attr('x2', function(d, i) { return getX(d.value, i); })
 					.attr('y2', function(d, i) { return getY(d.value, i); })
 					.style('opacity', 0.22) // 0.18 // 0.22
-					.attr('stroke-width', 1)
+					.attr('stroke-width', 1.2)
 					.attr('stroke', '#92A7B4')
 					.on("mouseover", function(d, i) {
 
@@ -98,15 +100,10 @@ function draw(error, genus, root) {
 						d3.select(this).style('opacity', 0.99);
 						d3.select(this).attr("stroke", currentColor);
 						
-
 						selectParents2(d, path);
-						// selectDots(d.genus);
 
 						selectDots2(d.genus, d.family, currentColor);
 						selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
-
-						// tooltip.text(d.genus +", " + d.value);
-						// tooltip.style("visibility", "visible");
 					})
 					.on("mousemove", function(){
 						tooltip.style("top", (event.pageY-35)+"px").style("left",(event.pageX+10)+"px");
@@ -115,14 +112,6 @@ function draw(error, genus, root) {
 
 						clicked = false;
 						animation();
-
-						// unselectDots();
-						// unselectArc(path);
-						// changeSelectedBox(0);
-						// changeTaxoName("","", "", "", "", "");
-
-						// d3.select(this).attr("stroke-width", 1);
-						// d3.select(this).style('opacity', 0.3);
 						tooltip.style("visibility", "hidden");
 					});
 
@@ -139,7 +128,6 @@ function draw(error, genus, root) {
 						unselectLine();
 						unselectDots();
 
-						// order = i;
 						clicked = true;
 						animation();
 
@@ -155,7 +143,6 @@ function draw(error, genus, root) {
 						selectArc(path, d.genus, d.family, d.order, d.class, d.phylum, 5);
 
 						tooltip.text(d.genus +", " + d.value);
-						// tooltip.style("visibility", "visible");
 					})
 					.on("mousemove", function(){
 
@@ -166,13 +153,6 @@ function draw(error, genus, root) {
 						clicked = false;
 						animation();
 
-						// d3.select(this).transition().duration(230).attr('r', 1.7);
-						// unselectArc(path);
-						// unselectLine();
-						// changeSelectedBox(0);
-						// changeTaxoName("","", "", "", "", "");
-
-						// d3.select(this).style('opacity', 0.7);
 						tooltip.style("visibility", "hidden");
 					});
 
@@ -181,18 +161,13 @@ function draw(error, genus, root) {
     .enter().append("path")
       .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
       .attr("d", arc)
-      // .style("stroke", '#92A7B4') // white
       .style('stroke', 'rgba(146,167,180,0.2)')
-      // .style("stroke", '#15202D') // blue
       .attr("stroke-width", 1.2) // 0.4,  1.1
       .style("fill", function(d) {
 
       	var phylum = getPhylum(d);
       	return getColor(phylum);
-
-      	// return '#92A7B4';
       }) // white
-      // .style("fill", '#15202D') // blue
       .style("fill-opacity", 0.0) // 0.2
       .style("fill-rule", "evenodd")
       .style('visibility', function(d) {
@@ -205,7 +180,6 @@ function draw(error, genus, root) {
       .each(stash)
       .on("mouseover", function(d) {
 
-      		// order = i;
 			clicked = true;
 			animation();
 
@@ -216,8 +190,6 @@ function draw(error, genus, root) {
 			tooltip.text(d.name);
 			selectParents(d, path);
 			selectChildren(d, currentColor);
-			// selectChildren(d, dots);
-			// tooltip.style("visibility", "visible");
 		})
 		.on("mousemove", function(){
 
@@ -227,19 +199,10 @@ function draw(error, genus, root) {
 
 			clicked = false;
 			animation();
-
-			// unselectArc(path);
-			// unselectDots();
-			// unselectLine();
-			// changeSelectedBox(0);
-			// changeTaxoName("", "", "", "", "", "");
-
-			// d3.select(this).attr("stroke-width", 0.4);
 			tooltip.style("visibility", "hidden");
 		});
 
 	selectOne();
-	// clicked = true;
 	animation();
 }
 
