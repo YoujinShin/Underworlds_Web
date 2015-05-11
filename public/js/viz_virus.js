@@ -235,21 +235,22 @@ function getGuideVirus() {
 function updateGuideHost_count() {
 
 	var gap = ( xScale2(70) - xScale2(0) )/4;
+	var t = 5;
 
 	line_bacteria.transition().duration(430)
-		.attr('x2', xScale2(0) + 10);
+		.attr('x2', xScale2(0) + t);
 
 	line_animal.transition().duration(430)
 		.attr('x1', xScale2(0) + gap )
-		.attr('x2', xScale2(0) + gap + 10);
+		.attr('x2', xScale2(0) + gap + t);
 
 	line_plant.transition().duration(430)
 		.attr('x1', xScale2(0) + gap*2 )
-		.attr('x2', xScale2(0) + gap*2 + 10);
+		.attr('x2', xScale2(0) + gap*2 + t);
 
 	line_unknown.transition().duration(430)
 		.attr('x1', xScale2(0) + gap*3 )
-		.attr('x2', xScale2(0) + gap*3 + 10);
+		.attr('x2', xScale2(0) + gap*3 + t);
 
 	text_animal.transition().duration(430)
 		.attr('x', xScale2(0) + gap );
