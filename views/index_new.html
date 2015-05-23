@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>UNDERWORLDS</title>
+	<link rel="shortcut icon" href="logo.png" />
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+	<link href="css/viz_new.css" rel="stylesheet">
+	<link href="css/style_new.css" rel="stylesheet">
+	<link href="css/virus.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<h2 id="name" >
+		<div class="container" style="height:22px !important; ">
+
+			<div class="row" >
+	            <div id="header" class="col-sm-4" style="text-align:left;">  
+	            	<a href="/" style="text-decoration: none; color: rgba(255,255,255,1);">
+	            		UNDERWORLDS
+	            	</a>
+	            </div>
+	            <div class="col-sm-8 tab" style="text-align:right;">  
+					<a id="about_tab"  href="#about" style="color:rgba(255,255,255,1); ">
+						ABOUT
+					</a>
+					<a id="team_tab" href="#team" style="color:rgba(255,255,255,1); ">TEAM</a>
+					<a id="contact_tab" href="mailto:underworlds-info@mit.edu" style="color:rgba(255,255,255,1); text-decoration: none;">CONTACT</a>
+				</div>
+			</div>
+
+			<div class="row tagline">
+				A VAST RESERVOIR OF INFORMATION ON HUMAN HEALTH <br>AND BEHAVIOR LIVES IN OUR SEWAGE
+			</div>
+		</div>		
+	</h2>
+
+
+	<!-- viz -->	
+	
+	<div id='viz'></div>
+
+	<!-- about -->
+	<div id='about'>
+		<div class="container">
+			<br>
+			<!-- <h3 class="title">
+				Imagine a future in which sewage is mined for real-time information.
+			</h3> -->
+			<!-- <hr> -->
+			<div class="row">
+	            <div class="col-sm-12 col-md-12" style="text-align:left;padding-top:50px; padding-bottom: 10px; ">
+	            	<hr style="margin-bottom: 10px; opacity: 0.6; margin-right: 0%">
+
+
+	            	<h3 class="title" >
+					A vast reservoir of information on human <br>
+					health and behavior lives in our sewage<br>
+					and this resource is untapped
+					</h3>
+
+					<!-- <hr style="margin-bottom: 0px; opacity: 0.4"> -->
+	            </div>
+	        </div>
+
+	        <br>
+
+			<div class="row">
+				<div class="col-sm-6 col-md-6" style="text-align:left; ">  
+					We imagine a future in which sewage is mined for real-time information that can inform policy makers, health practitioners, designers, and researchers alike. Such is the idea behind Underworlds: a cross-disciplinary, open-data platform for monitoring urban health patterns, shaping more inclusive public health strategies, and pushing the boundaries of urban epidemiology. Pioneered by the Senseable City Lab and the Alm Lab, a prototype smart sewage platform is being developed at MIT consisting of physical infrastructure, biochemical measurement technologies, and the downstream computational tools and analytics necessary to interpret and act on our findings. 
+					<br><br>
+					The Underworlds project is the first of its kind, and a proof of concept that cities can make use of their waste water system to do near real-time urban epidemiology and understand human health and behavior with a fine spatio-temporal resolution. Probably the most obvious first application of smart sewage technology is contagious disease surveillance, and the prediction of outbreaks of infectious disease before symptoms arise. 
+					Early warnings in relation to the presence of new flu strains in urban centers could significantly reduce a community’s medical costs, save lives and help prevent pandemics.
+	            </div>
+
+	            <div class="col-sm-6 col-md-6" style="text-align:left;">
+					 In addition, smart sewage could change the way non-communicable diseases are studied, because biomarkers for diseases such as obesity and diabetes can be measured at unprecedented scale and temporal resolution.
+					<br><br>
+					The implications of this platform extend beyond just disease surveillance to the development of a new type of human population census. Analyzed in tandem with demographic data, this platform can study the aggregate health of a city to the particular health of a neighborhood. Underworlds will study the geographic morphology, network topology, and demographic distribution in conjunction with wastewater loads over time, to propose and validate a model that informs wastewater sampling and correlates to target population samples. This work has already started in a pilot study in Boston. In collaboration with the Department of Public Works, the geographic and topological character of the sewage tributary network in several communities in and around the city have been analyzed along with demographic data to develop a sampling strategy for maximum coverage and optimal population sample.
+	        	</div>	
+	        </div>
+			
+			<br>
+	        <div class="row bg-gray" >
+	            <div class="col-sm-12 col-md-12" style="text-align:left; padding-top:50px; padding-bottom: 10px; ">					
+
+					<button class="count">By Count</button>
+					<button class="host">By Host</button>
+
+					<div id="viz_virus"></div>
+	            </div>
+	        	<!-- <img id="diagram" src="diagram5.png"/> -->
+				<!-- <img src="diagram3.png" style="width:80%; margin: 10px"/>	 -->
+	        </div>
+    	</div>
+	</div>
+
+
+	<!-- team -->
+	
+	<div id="team">
+		<br><br><br><br>
+		<div class="container">
+			
+			<!-- <h3 class="title">TEAM</h3> -->
+			<hr style="margin-bottom: 10px; opacity: 0.6; margin-right: 0%">
+			<!-- <h3 class="title">Team</h3> -->
+			
+			<!-- First row -->
+			<div class="row" style="margin:0px">
+				<div class="col-xs-4 description boxed-grey" style="padding-right: 14px !important">
+					<h3 id="labname">
+						<span class="department">
+							Project Lead:
+						</span><br>
+						<a href="http://senseable.mit.edu/" style="color: rgba(255,255,255,0.8);" target="_blank">
+							MIT Senseable City Lab
+						</a>
+					</h3>
+				
+
+					<div class="box">
+					<p>
+					Carlo Ratti<span class="position"> - Principal Investigator, Director </span> <br>
+					Yaniv Turgeman<span class="position"> - Research & Development Lead </span> <br>
+					Newsha Ghaeli<span class="position"> - Project Manager </span><br>
+					Antoine de Maleprade<span class="position"> - Electrical Engineering </span><br>
+					Franco Montalvo<span class="position"> - Mechanical Engineering</span><br>
+					Peter Kang<span class="position"> - Environmental Engineering</span><br>
+					Youjin Shin<span class="position"> - Web & Visualization</span><br>
+					</p>
+					<p>
+					<span class="position">_ Network Modeling and Analysis : </span>
+					Aldo Treville, Alexander Belyi, Newsha Ghaeli, Youjin Shin
+					</p>
+					<p>
+					<span class="position">_ Development Team : </span>
+					Katherine Adler, Dang Pham, Anuj Khandelwal, Cyndia Cao, Carlos Graeves
+					</p>
+					</div>
+
+					<!--  -->
+					
+					<h3 id="labname" style="margin-top: 35px !important">
+						<a href="https://www.csail.mit.edu/" style="color: rgba(255,255,255,0.8);" target="_blank">
+							MIT CSAIL
+						</a>
+					</h3>
+					<div class="box">
+					<p>
+					Daniela Rus<span class="position"> - Co-Principal Investigator, Director</span>
+					</p>
+					</div>
+
+				</div>
+					
+				
+				<div class="col-xs-4 description boxed-grey" style="padding-right: 7px !important; padding-left: 7px !important">
+					<h3 id="labname">
+						<span class="department">
+							Biology Lead:
+						</span><br>
+						<a href="http://almlab.mit.edu/" style="color: rgba(255,255,255,0.8);" target="_blank">
+							MIT Alm Lab
+						</a>
+					</h3>
+					
+					<div class="box">
+					<p>
+					Eric Alm<span class="position"> - Co-Principal Investigator, Director</span><br>
+					Mariana Matus<span class="position"> - Research Lead</span><br>
+					Yaniv Turgeman<span class="position"> - Research Lead </span><br>
+					Ilana Brito<span class="position"> - Post-Doctoral Fellow</span><br>
+					Claire Duvallet <span class="position">– Graduate Research Assistant</span>
+					</p>
+
+					<p>
+					<span class="position">_ Development Team : </span>
+					Minyi Lee, Kathy Lin
+					</p>
+					</div>
+
+					<!--  -->
+					
+					<h3 id="labname">
+						<a href="https://runstadlerlab.mit.edu/" style="color: rgba(255,255,255,0.8);" target="_blank">
+							MIT Runstadler Lab
+						</a>
+					</h3>
+
+					<div class="box">
+					<p>
+					Jon Runstadler<span class="position"> - Co-Principal Investigator, Director</span><br>
+					Christopher Bandoro<span class="position"> - Graduate Research Assistant</span><br>
+					</p>	
+					</div>
+
+					<!--  -->
+					
+					<h3 id="labname">
+						<a href="https://polzlab.mit.edu/" style="color: rgba(255,255,255,0.8);" target="_blank">
+							MIT Polz Lab
+						</a>
+					</h3>
+					<div class="box">
+					<p>
+					Martin Polz<span class="position"> - Co-Principal Investigator, Director</span>
+					</p>
+					</div>
+					
+				</div>
+
+				<div class="col-xs-4 description boxed-grey" style="padding-left: 14px !important">
+					<!--  -->
+					<h3 id="labname">
+						<span class="department">Kuwait Partners:</span><br>
+						Kuwait Institute for Scientific Research
+					</h3>
+
+					<div class="box">
+					<p>
+					Sameer Al-Zenki<span class="position"> - Principal Investigator</span><br>
+					Kazi M. Jamil<span class="position"> - Co-Principal Investigator</span><br>
+					Tareq Al-Ati<span class="position"> - Co-Principal Investigator</span><br>
+					Ashraf I. Ahmad<span class="position"> - Co-Principal Investigator</span>
+					</p>
+					</div>
+
+					<!--  -->
+					
+					<h3 id="labname" style="margin-top: 56px !important">
+						Kuwait University
+					</h3>
+
+					<div class="box">
+					<p>
+					Entesar H. Husain<span class="position"> - Principal Investigator</span><br>
+					Rawa Aljarallah<span class="position"> - Co-Principal Investigator</span><br>
+					</p>
+					</div>
+
+					<!--  -->
+					<div style="padding: 0px"></div>
+					<h3 id="labname">
+						<span class="department">Sponsors:</span><br>
+					</h3>
+					<div class="box">
+					<p>
+						<a href="https://cnre.mit.edu/" style="color: #bbb;" target="_blank">
+							Kuwait-MIT Center for Natural Resources and the Environment 
+						</a>
+					</p>
+					</div>
+				</div>
+		
+			</div> <!-- first row -->
+		
+			
+			<div class="row" id="contact" style="margin:0px; margin-top: 10px;">
+				<br><br><br><br>
+				<div class="col-xs-6">
+					<a href="http://web.mit.edu/" target="_blank">
+						<img id="logo" src="mitlogo.png">
+					</a>
+				</div>
+			
+				<div class="col-xs-6">
+					<div id="footer">
+						<span class="department">For more information, contact:</span><br>
+						<a href="mailto:underworlds-info@mit.edu" style="color:#aaa; text-decoration: none;">
+							underworlds-info@mit.edu
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div> <!-- container -->
+	</div> <!-- team -->
+
+
+
+	<!-- library -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/queue.v1.min.js"></script>
+	<script src="js/d3.v3.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+
+	<script src="js/viz3.js"></script> 
+	<script src="js/viz_color.js"></script> 
+	<script src="js/viz_functions.js"></script> 
+	<script src="js/viz_guide.js"></script> 
+	<script src="js/main.js"></script> 
+
+	<script src="js/viz_virus.js"></script>
+	<script src="js/viz_virus_functions.js"></script>
+
+
+	<script>
+		$(function() {
+		  
+		  $('a[href*=#]:not([href=#])').click(function() {
+		  	clicked = true;
+			animation();
+
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 700);
+		        return false;
+		      }
+		    }
+		  });
+		});
+	</script>
+</body>
+</html>

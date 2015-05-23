@@ -92,7 +92,7 @@ function draw(error, genus, root) {
 
 						order = i;
 						clicked = true;
-						animation();
+						// animation();
 
 						var currentColor = getColor(d.phylum);
 						
@@ -111,7 +111,7 @@ function draw(error, genus, root) {
 					.on("mouseout", function(d) {
 
 						clicked = false;
-						animation();
+						// animation();
 						tooltip.style("visibility", "hidden");
 					});
 
@@ -129,7 +129,7 @@ function draw(error, genus, root) {
 						unselectDots();
 
 						clicked = true;
-						animation();
+						// animation();
 
 						var currentColor = getColor(d.phylum);
 
@@ -151,7 +151,7 @@ function draw(error, genus, root) {
 					.on("mouseout", function(d) {
 
 						clicked = false;
-						animation();
+						// animation();
 
 						tooltip.style("visibility", "hidden");
 					});
@@ -181,7 +181,7 @@ function draw(error, genus, root) {
       .on("mouseover", function(d) {
 
 			clicked = true;
-			animation();
+			// animation();
 
 			d3.select(this).style("fill-opacity", 0.9);
 
@@ -198,12 +198,12 @@ function draw(error, genus, root) {
 		.on("mouseout", function(d) {
 
 			clicked = false;
-			animation();
+			// animation();
 			tooltip.style("visibility", "hidden");
 		});
 
 	selectOne();
-	animation();
+	// animation();
 }
 
 function getX(d, i) {

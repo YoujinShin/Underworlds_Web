@@ -11,7 +11,15 @@ var moment = require("moment"); // date manipulation library
 
 exports.index = function(req, res) {
 	console.log('main page requested');
+	// es.render('index_new.html');
 	res.render('index3.html');
+	// res.render('main.html');
+}
+
+exports.design = function(req, res) {
+	console.log('main page requested');
+	res.render('index_new.html');
+	// res.render('index3.html');
 	// res.render('main.html');
 }
 
