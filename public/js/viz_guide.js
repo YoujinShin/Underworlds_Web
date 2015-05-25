@@ -67,29 +67,29 @@ function textGuide() {
 		.attr('stroke-width', 1)
 		.style("text-anchor", "end");
 
-	g.append('text')
-		.attr('class', 'middleTextBIG')
-		.attr('x', 0)
-		.attr('y', -15 )
-		.text('SEWAGE') //Bacterial Profile
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+	// g.append('text')
+	// 	.attr('class', 'middleTextBIG')
+	// 	.attr('x', 0)
+	// 	.attr('y', -15 )
+	// 	.text('SEWAGE') //Bacterial Profile
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
 
 	g.append('text')
 		.attr('class', 'middleTextBIG')
 		.attr('x', 0)
 		.attr('y', 5 )
-		.text('BACTERIAL') //Bacterial Profile
+		.text('BACTERIA') //Bacterial Profile
 		.attr('stroke-width', 1)
 		.style("text-anchor", "middle");
 
-	g.append('text')
-		.attr('class', 'middleTextBIG')
-		.attr('x', 0)
-		.attr('y', 25)
-		.text('PROFILE') //Bacterial Profile
-		.attr('stroke-width', 1)
-		.style("text-anchor", "middle");
+	// g.append('text')
+	// 	.attr('class', 'middleTextBIG')
+	// 	.attr('x', 0)
+	// 	.attr('y', 25)
+	// 	.text('PROFILE') //Bacterial Profile
+	// 	.attr('stroke-width', 1)
+	// 	.style("text-anchor", "middle");
 }
 
 var domain_taxo, phylum_taxo, class_taxo, order_taxo, 

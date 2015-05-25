@@ -1,8 +1,8 @@
-var margin = { top: 20, right: 30, bottom: 30, left: 30 };
+var margin = { top: 10, right: 30, bottom: 30, left: 30 };
 
 var width = 1000,
 	width = width - margin.left - margin.right,
-	height = width * 0.65, // 0.66
+	height = width * 0.63, // 0.66
 	height = height - margin.top - margin.bottom;
 
 var svg = d3.select('#viz').append('svg')
@@ -26,7 +26,7 @@ var ty = height/2 + margin.top;
 var g = svg.append('g')
 			.attr('transform', 'translate('+ tx +','+ ty +')');
 
-var innerRadius = height*0.3;
+var innerRadius = height*0.27; // 0.3
 var outerRadius = height*0.476; // 0.48
 
 var linearScale = d3.scale.linear()

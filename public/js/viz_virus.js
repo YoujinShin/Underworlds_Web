@@ -2,7 +2,7 @@ var margin2 = { top: 10, right: 30, bottom: 20, left: 0 };
 
 var width2 = 1020,
 	width2 = width2 - margin2.left - margin2.right,
-	height2 = width2 * 0.4,
+	height2 = width2 * 0.35,
 	height2 = height2 - margin2.top - margin2.bottom;
 
 var svg2 = d3.select('#viz_virus').append('svg')
@@ -129,8 +129,8 @@ function ready(error, viruses) {
 
 	text_human = g2.append('text')
 			.attr('class', 'virusHost')
-			.attr('x', xScale2(38) + 10)
-			.attr('y', yScale2( getLogValue(151)) + 18)
+			.attr('x', xScale2(38) + 0)
+			.attr('y', yScale2( getLogValue(151)) + 0)
 			.text('Humans')
 			.style('fill', '#6ab8f7')
 			.style('fill-opacity', 0.6)
@@ -170,7 +170,7 @@ function updateByCount() {
 
 	updateGuideHost_count();
 
-	text_human.transition().duration(430).attr('x', xScale2(30) + 10);
+	text_human.transition().duration(430).attr('x', xScale2(30) + 0);
 }
 
 function updateByHost() {
@@ -187,7 +187,7 @@ function updateByHost() {
 
 	updateGuideHost_host();
 
-	text_human.transition().duration(430).attr('x', xScale2(38) + 10);
+	text_human.transition().duration(430).attr('x', xScale2(38) + 0);
 }
 
 function getLogValue(d) {
@@ -359,12 +359,10 @@ function getGuideHost() {
 
 	text_host = g2.append('text')
 			.attr('class', 'virusHost')
-			// .attr('x', xScale2(70) + 40)
 			.attr('x', xScale2(0) - 20)
 			.attr('y', yScale2(0) + 50)
 			.text('HOST')
 			.style('fill', '#aaa')
-			// .style('fill', 'rgba(255,255,255,0.6)')
 			.style("text-anchor", "end");
 
 	text_count = g2.append('text')
@@ -375,13 +373,11 @@ function getGuideHost() {
 			.style('fill', '#aaa')
 			.style("text-anchor", "end");
 
-
-	text_title = g2.append('text')
-			.attr('class', 'middleTextBIG')
-			.attr('x', xScale2(35))
-			.attr('y', yScale2(getLogValue(23816)) - 0)
-			.text('SEWAGE VIRUS PROFILE')
-			// .style('fill', '#fff')
-			.style("text-anchor", "middle");
-
+	// text_title = g2.append('text')
+	// 		.attr('class', 'middleTextBIG')
+	// 		.attr('x', xScale2(35))
+	// 		.attr('y', yScale2(getLogValue(23816)) - 0)
+	// 		.text('SEWAGE VIRUS PROFILE')
+	// 		// .style('fill', '#fff')
+	// 		.style("text-anchor", "middle");
 }
