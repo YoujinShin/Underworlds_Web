@@ -32,9 +32,9 @@ body {
 	font-size: 12px !important;
 	letter-spacing: 1px;
 	line-height: 160%;
-	background-color: rgba(255,255,255,0.04);
-	padding: 10px;
-	padding-left: 12px;
+	/*background-color: rgba(255,255,255,0.04);*/
+	/*padding: 10px;*/
+	/*padding-left: 12px;*/
 	color: rgba(255,255,255,0.85);
 	text-decoration: none;
 }
@@ -54,10 +54,22 @@ h3 {
 
 #about {
 	font-family: 'HelveticaN', sans-serif;
-	color: #aaa;
+	background-color: rgba(0,228,205,1);
+	color: #15202D;
 	font-size: 13px;
-	font-weight: 300;
-	letter-spacing: 1px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	padding-bottom: 120px;
+	padding-top: 100px;
+}
+
+#team {
+	font-family: 'HelveticaN', sans-serif;
+	font-size: 13px;
+	font-weight: lighter;
+	letter-spacing: 0px;
+	padding-bottom: 10px;
+	padding-top: 100px;
 }
 
 #diagram {
@@ -70,6 +82,7 @@ h3 {
 	background-color: rgba(0,228,205,1);
 	padding: 60px;
 	padding-top: 140px;
+	padding-bottom: 60px;
 	color: #15202D;
 	font-family: 'HelveticaN', sans-serif;
 	font-size: 28px;
@@ -80,15 +93,14 @@ h3 {
 }
 
 .title {
-	font-family: 'HelveticaNeue', sans-serif;
+	font-family: 'HelveticaN', sans-serif;
 	letter-spacing: 3px;
 	color: #3dabec;
 	color: rgba(255,255,255, 1);
-	font-size: 32px;
+	font-size: 14px;
 	line-height: 160%;
-	font-weight: 600;
+	font-weight: 400;
 	text-transform: uppercase;
-	padding-top:40px;
 }
 
 #footer {
@@ -112,7 +124,7 @@ h3 {
 	padding-top: 40px;
 	padding-bottom: 10px !important;
 
-	z-index: 40;
+	z-index: 140;
 	position: fixed;
 }
 
@@ -125,6 +137,7 @@ h3 {
 	color: rgba(255,255,255,1);
 	font-weight: normal;
 	line-height: 120%;
+	padding-left: 10px;
 }
 
 #subheader {
@@ -202,13 +215,13 @@ h3 {
 
 .department {
 	font-size: 12px !important;
-	color: #aaa !important;
-	opacity: 0.6 !important;
+	color: #fff !important;
+	opacity: 0.76 !important;
 	position: relative;
 }
 
 .position {
-	opacity: 0.6 !important;
+	/*opacity: 0.6 !important;*/
 }
 
 a:hover {
@@ -227,8 +240,11 @@ a:hover {
 }
 
 .box {
-	padding: 10px;
-	padding-left: 12px;
+/*	padding: 10px;
+	padding-left: 12px;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+	opacity: 0.8;
 }
 
 .tab {
@@ -287,4 +303,13 @@ a:hover {
 	width: 100%;
 	height: 10px;
 	z-index: 50;
+}
+
+.titlename {
+	color: white;
+	padding-top: 100px;
+	font-family: 'HelveticaN', sans-serif;
+	font-weight: lighter;
+	font-size: 12px;
+	letter-spacing: 1px;
 }

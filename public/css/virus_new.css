@@ -1,10 +1,10 @@
 #viz_virus {
-	/*position: absolute;*/
-	/*background-color: #000;*/
+
 	width: 1200px;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	padding-top: 100px !important;
+	padding-top: 40px !important;
+	padding-bottom: 80px !important;
 	padding-left: 30px;
 	text-align: center;
 }
@@ -13,7 +13,6 @@
 
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
-	/*fill: rgba(255,255,255,0.3);*/
 	stroke: none;
 	text-align: left;
 	letter-spacing: 1px;
@@ -22,7 +21,6 @@
 h2 {
 	letter-spacing: 1px;
 	font-weight: 400;
-	/*left: 5%;*/
 }
 
 button {
@@ -33,12 +31,10 @@ button {
 	font-weight: 400 !important; 
 	padding: 5px !important;
 	border: 1px solid rgba(255,255,255,0.4) !important;
-	/*opacity: 0.9 !important;*/
-	/*border-radius: 5px !important;*/
+
 	background-color: rgba(255,255,255,0) !important;
 	text-align: right !important;
 	letter-spacing: 1px;
-
 }
 
 button:active {
@@ -50,7 +46,6 @@ button:active {
 .count {
 	position: absolute;
 	right: 30px;
-	/*top: 50px;*/
 }
 
 .host {
